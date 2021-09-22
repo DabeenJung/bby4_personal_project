@@ -8,7 +8,7 @@
 This browser based web application to ...
 * Hi my name is Sharon. I'm excited to learn web development through a hands on project.
 * Valerie was here
-* Dabeen d
+* Hi my name is Dabeen(Ellen). I'm excited about this project because we're creating an actual application by ourselves.
 
 ## Technologies
 Technologies used for this project:
