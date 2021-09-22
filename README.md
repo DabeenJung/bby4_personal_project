@@ -7,6 +7,7 @@
 ## General Info
 This browser based web application to ...
 * Hi my name is Sharon. I'm excited to learn web development through a hands on project.
+* Valerie was here
 
 
 ## Technologies
