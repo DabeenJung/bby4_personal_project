@@ -1,20 +1,35 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <title>My BCIT Project</title>
-    <meta name="comp1800 boilerplate code" content="my bcit project">
-    <meta name="author" content="BCIT">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap, firebase-auth-ui -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- Optional styles and scripts of your own -->
-    <link type="text/css" href="styles/my_style.css">
+    <title>plant app</title>
+    <style>
+        body {
+            background-image: url('./images/landingImage.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 100vh;}
+
+        input {width: 480px; height: 50px; }
+
+        label {margin-left: 1rem;}
+
+        a {margin-left: 1rem;}
+
+        .container{padding-top: 150px; text-align: right;}
+        .container p{color: white; font-size: 2rem;}
+
+        .display-3{color: white;}
+    </style>
 </head>
 
 <body>
@@ -23,38 +38,19 @@
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
     <!-- Header Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-info">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">myApp</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.html">Login/Signup</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-            </div>
+    <nav class="navbar navbar-light bg-success">
+        <div class="container py-3">
+            <i class="material-icons">menu</i>
+            <a class="navbar-brand" href="#">PLANT APP</a>
+            <i class="nav-item">Sign Up</i>
         </div>
     </nav>
 
     <!-- welcome and main part of the page -->
     <div class="container">
-        <h1 class="display-4"> Hello, <span id="username">CST!</span> </h1>
-        <p>Do you want to track your coffee consumption each day?
-            You've come to the right place. Get started now!</p>
-        <a href="login.html" class="btn btn-info">Login/Signup</a>
+        <h1 class="display-3"> Plant care just got easier </h1>
+        <p>Join our community of plant lovers</p>
+        <a href="login.html" class="btn btn-success">Login/Signup</a>
     </div>
 
     <!----------------------------------------------->
