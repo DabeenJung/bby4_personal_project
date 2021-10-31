@@ -1,65 +1,88 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
 
-    <title>plant app</title>
+    <title>True Leaf</title>
     <style>
-        body {
-            background-image: url('./images/landingImage.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            min-height: 100vh;}
+      body {
+        background-image: url("./images/landingImage.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 100vh;
+      }
 
-        input {width: 480px; height: 50px; }
+      input {
+        width: 480px;
+        height: 50px;
+      }
 
-        label {margin-left: 1rem;}
+      label {
+        margin-left: 1rem;
+      }
 
-        a {margin-left: 1rem;}
+      a {
+        margin-left: 1rem;
+      }
 
-        .container{padding-top: 150px; text-align: right;}
-        .container p{color: white; font-size: 2rem;}
+      .container {
+        padding-top: 150px;
+        text-align: right;
+      }
+      .container p {
+        color: white;
+        font-size: 2rem;
+      }
 
-        .display-3{color: white;}
+      .display-3 {
+        color: white;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <!-------------------------------------->
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
     <!-- Header Navigation Bar -->
     <nav class="navbar navbar-light bg-success">
-        <div class="container py-3">
-            <i class="material-icons">menu</i>
-            <a class="navbar-brand" href="#">PLANT APP</a>
-            <i class="nav-item">Sign Up</i>
-        </div>
+      <div class="container py-3">
+        <i class="material-icons">menu</i>
+        <a class="navbar-brand" href="#">PLANT APP</a>
+        <i class="nav-item">Sign Up</i>
+      </div>
     </nav>
 
     <!-- welcome and main part of the page -->
     <div class="container">
-        <h1 class="display-3"> Plant care just got easier </h1>
-        <p>Join our community of plant lovers</p>
-        <a href="login.html" class="btn btn-success">Login/Signup</a>
+      <h1 class="display-3">Plant care just got easier</h1>
+      <p>Join our community of plant lovers</p>
+      <a href="login.html" class="btn btn-success">Login/Signup</a>
     </div>
 
     <!----------------------------------------------->
     <!-- JS: Boostrap, Firebase, API related, add Jquery    -->
     <!----------------------------------------------->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
@@ -70,7 +93,5 @@
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
-
-</body>
-
+  </body>
 </html>
