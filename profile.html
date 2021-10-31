@@ -21,16 +21,32 @@
             color: rgba(0,0,0,.9);
         }
          
-        .input-group {
-            padding: 40px 50px 20px 50px; 
+        .user-profile{
+            display: grid; 
+            justify-content: center;
+            padding: 20px 0; 
         }
-        
-        .form-control:focus {
-            box-shadow: none;
+
+        .avatar {
+            display: grid; 
+            justify-content: center;
+        }
+
+        .avatar img{
+            border-radius: 100%;
+        }
+
+        .info {
+            text-align: center;
+        }
+
+        .info .desc{
+            display:block;
         }
 
         .card-group {
             margin: 0 50px;
+            justify-content: space-around;
         }
         .card-group .row{
             justify-content: space-evenly;
@@ -39,7 +55,6 @@
 
         .card {
             border: none;
-            
             padding: 10px 0 ;
             width: 18rem; 
         }
@@ -62,52 +77,49 @@
             <a class="navbar-brand" href="main.html" id='logo'>True Leaf</a>
         </div>
     </nav>
-    <div class="input-group">
-        <input type="search" class="form-control rounded" placeholder="Type in plant name" aria-label="Search"
-        aria-describedby="search-addon" />
-        <button type="button" class="btn btn-success">Search</button>
-      </div>
-      
-    <div class="card-group">
+      <br>
+     <div class="user-profile">
+                <div class="avatar">
+                    <img alt="user display picture" src="https://i.pravatar.cc/150/">
+                </div>
+                <div class="info">
+                    <h5 class="title">
+                        <strong>ThePlantKiller</strong>
+                    </h5>
+                    <h7 class="desc">British Columbia, Canada</h7>
+                    <h7 class="desc">3 Plants</h7>
+                </div>
+            </div>
+
+<div class="card-group">
   <div class="row">
     <div class="card col-auto">
-      <img src="./images/plants/birdnest.png" class="card-img-top" alt="...">
+      <img src="./images/user_photos/ficus_burgundy.jpg" class="card-img-top" alt="...">
       <div class="card-body" style="width: 390px; margin: auto;">
-        <h5 class="card-title" style='display: inline;'><strong>Bird's Nest Fern</strong></h5>
-        <h7 class="card-text" style='display: block;'><em>Asplenium Nidus</em></h7>
+        <h5 class="card-title" style='display: inline;'><strong>Unnamed #1</strong></h5>
+        <h7 class="card-text" style='display: block;'><em>Ficus Burgundy</em></h7>
+        <h7 class="card-text" style='display: block;'>Adopted on July 3, 2020</h7>
       </div>
     </div>
     <div class="card col-auto">
-      <img src="./images/plants/calathea.png" class="card-img-top" alt="...">
+      <img src="./images/user_photos/ficus_tineke.jpg" class="card-img-top" alt="...">
       <div class="card-body" style="width: 390px; margin: auto;">
-        <h5 class="card-title" style='display: inline;'><strong>Calathea</strong></h5>
-        <h7 class="card-text" style='display: block;'><em>Calathea Roseopicta</em></h7>
+        <h5 class="card-title" style='display: inline;'><strong>Ruby</strong></h5>
+        <h7 class="card-text" style='display: block;'><em>Ficus Tineke</em></h7>
+                <h7 class="card-text" style='display: block;'>Adopted on April 14, 2021</h7>
+        
       </div>
     </div>
     <div class="card col-auto">
-      <img src="./images/plants/ficus_burgundy.png" class="card-img-top" alt="...">
+      <img src="./images/user_photos/zz_plant.jpg" class="card-img-top" alt="...">
       <div class="card-body" style="width: 390px; margin: auto;">
-        <h5 class="card-title" style='display: inline;'><strong>Ficus Burgundy</strong></h5>
-        <h7 class="card-text" style='display: block;'><em>Ficus elastica ‘Burgundy’ </em></h7>
-      </div>
-    </div>
-    <div class="card col-auto">
-      <img src="./images/plants/ficus_tineke.png" class="card-img-top" alt="...">
-      <div class="card-body" style="width: 390px; margin: auto;">
-        <h5 class="card-title" style='display: inline;'><strong>Ficus Tineke</strong></h5>
-        <h7 class="card-text" style='display: block;'><em>Ficus elastica ‘Tineke’ </em></h7>
-      </div>
-    </div>
-    <div class="card col-auto">
-      <img src="./images/plants/lavender.png" class="card-img-top" alt="...">
-      <div class="card-body" style="width: 390px; margin: auto;">
-        <h5 class="card-title" style='display: inline;'><strong>Lavender</strong></h5>
-        <h7 class="card-text" style='display: block;'><em>Lavandula angustifolia</em></h7>
+        <h5 class="card-title" style='display: inline;'><strong>Unnamed #2</strong></h5>
+        <h7 class="card-text" style='display: block;'><em>ZZ Plant</em></h7>
+                <h7 class="card-text" style='display: block;'>Adopted on August 10, 2021</h7>
       </div>
     </div>
   </div>
-
-    </div>
+</div>
     <br><br>
 
     <nav class="navbar fixed-bottom navbar-light bg-light">
@@ -115,14 +127,14 @@
             <a class="navbar-brand" href="main.html">
                 <i class="material-icons">home</i>
             </a>
-            <a class="navbar-brand" href="#">
-                <i class="material-icons" style='color: #198754'>search</i>
+            <a class="navbar-brand" href="plants.html">
+                <i class="material-icons">search</i>
             </a>
             <a class="navbar-brand" href="#">
                 <i class="material-icons">favorite_border</i>
             </a>
-            <a class="navbar-brand" href="profile.html">
-                <i class="material-icons">account_circle</i>
+            <a class="navbar-brand" href="#">
+                <i class="material-icons" style='color: #198754'>account_circle</i>
             </a>
     </nav>
 
