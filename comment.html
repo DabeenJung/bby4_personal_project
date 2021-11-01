@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Google Icons (Material Design)-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <style>
+        .navbar-brand {
+            margin: auto;
+        }
+        #backbutton {
+            color: black;
+        }
+        #logo {
+            margin-left: 35%;
+        }
+        .form-floating {
+            display: inline-block;
+            width: 80%;
+        }
+        #account {
+            font-size: 40px;
+            position: relative;
+            top: 13px;
+            left: 10px;
+        }
+        #send {
+            font-size: 30px;
+            position: relative;
+            top: 8px;
+            left: 18px;
+            color: rgb(48, 148, 48);
+        }
+        #commentArea {
+            height: 40px;
+            width: 77%;
+            position: relative;
+            left: 13px;
+            border-radius: 1em;
+            border: 1.5px solid rgb(117, 103, 103);
+            padding: 15px;
+        }
+        #comments {
+            display: inline-block;
+            margin-left: 5px;
+            padding: 5px;
+            border: 1px solid grey;
+            border-radius: 1em;
+        }
+        #comments p {
+            margin: 0;
+        }
+        #commentBox {
+            margin: 20px;
+        }
+    </style>
+
+    <title>comment</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-success">
+        <div class="container py-3">
+            <a href="javascript:history.back()"><i class="material-icons" id='backbutton'>arrow_back_ios_new</i></a>
+            <a class="navbar-brand" href="main.html" id='logo'>True Leaf</a>
+        </div>
+    </nav>
+
+    <div id='commentBox'>
+        <i class="material-icons" style='font-size: 33px; position: relative; top: -15px'>account_circle</i>
+        <div id='comments'>
+            <p style='font-size: 19px;'><b>heyhihello</b></p>
+            <p>Wow I love your plant!</p>
+        </div>
+    </div>
+    <div id='commentBox'>
+        <i class="material-icons" style='font-size: 33px; position: relative; top: -15px'>account_circle</i>
+        <div id='comments'>
+            <p style='font-size: 19px;'><b>ellen24</b></p>
+            <p>Where did you get your plant?</p>
+        </div>
+    </div>
+    <div id='commentBox'>
+        <i class="material-icons" style='font-size: 33px; position: relative; top: -15px'>account_circle</i>
+        <div id='comments'>
+            <p style='font-size: 19px;'><b>clairetho__</b></p>
+            <p>I love your plant's color!</p>
+        </div>
+    </div>
+    <div id='commentBox'>
+        <i class="material-icons" style='font-size: 33px; position: relative; top: -15px'>account_circle</i>
+        <div id='comments'>
+            <p style='font-size: 19px;'><b>xoxo._.</b></p>
+            <p>WOW</p>
+        </div>
+    </div>
+
+    <div class="divbar fixed-bottom" style="bottom: 100px">
+        <i class="material-icons" id='account'>account_circle</i>
+        <input type="text" placeholder="Write a comment..." id='commentArea'>
+        <a href="#"><i class="material-icons" id='send'>send</i></a>
+    </div>
+
+    <nav class="navbar fixed-bottom navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="main.html">
+                <i class="material-icons" style='color: #198754'>home</i>
+            </a>
+            <a class="navbar-brand" href="plants.html">
+                <i class="material-icons">search</i>
+            </a>
+            <a class="navbar-brand" href="#">
+                <i class="material-icons">favorite_border</i>
+            </a>
+            <a class="navbar-brand" href="profile.html">
+                <i class="material-icons">account_circle</i>
+            </a>
+    </nav>
+
+</body>
+
+</html>
