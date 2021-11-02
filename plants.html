@@ -1,206 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <!-- Google Icons (Material Design)-->
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Link to the api keys for your firebase project -->
-    <script src="./scripts/firebaseAPI.js"></script>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <!-- Google Icons (Material Design)-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
-    <style>
-      #logo {
-        margin-left: 37%;
-      }
+  <!-- Link to the api keys for your firebase project -->
+  <script src="./scripts/firebaseAPI.js"></script>
 
-      a {
-        color: rgba(0, 0, 0, 0.9);
-      }
+  <style>
+    #logo {
+      margin-left: 35%;
+    }
 
-      .input-group {
-        padding: 40px 50px 20px 50px;
-      }
+    a {
+      color: rgba(0, 0, 0, 0.9);
+    }
 
-      .form-control:focus {
-        box-shadow: none;
-      }
+    .input-group {
+      padding: 40px 50px 20px 50px;
+    }
 
-      .card-group {
-        margin: 0 50px;
-      }
-      .card-group .row {
-        justify-content: space-evenly;
-        gap: 0.5em;
-      }
+    .form-control:focus {
+      box-shadow: none;
+    }
 
-      .card {
-        border: none;
-        max-width: 45%;
-        padding: 10px 0;
-        width: 18rem;
-      }
+    .card-group {
+      margin: 0 50px;
+    }
 
-      .card-body {
-        text-decoration: none;
-      }
+    .card-group .row {
+      justify-content: space-evenly;
+      gap: 0.5em;
+    }
 
-      .card-title {
-        display: inline;
-      }
+    .card {
+      border: none;
+      max-width: 45%;
+      padding: 10px 0;
+      width: 18rem;
+    }
 
-      .card-text {
-        display: block;
-      }
+    .card-body {
+      text-decoration: none;
+    }
 
-      .card-img-top {
-        margin: 1% auto;
-      }
+    .card-title {
+      display: inline;
+    }
 
-      .navbar-brand {
-        margin: auto;
-      }
-      #lavender:hover {
-        color: #198754;
-      }
-    </style>
-    <title>True Leaf</title>
-  </head>
+    .card-text {
+      display: block;
+    }
 
-  <body>
-    <nav class="navbar navbar-light bg-success">
-      <div class="container py-3">
-        <a href="javascript:history.back()"
-          ><i class="material-icons">arrow_back_ios_new</i></a
-        >
-        <a class="navbar-brand" href="main.html" id="logo">True Leaf</a>
-      </div>
-    </nav>
-    <div class="input-group">
-      <input
-        type="search"
-        class="form-control rounded"
-        placeholder="Type in plant name"
-        aria-label="Search"
-        aria-describedby="search-addon"
-      />
-      <button type="button" class="btn btn-success">Search</button>
+    .card-img-top {
+      margin: 1% auto;
+    }
+
+    .navbar-brand {
+      margin: auto;
+    }
+    #lavender {
+      text-decoration: none;
+    }
+
+    #lavender:hover {
+      color: #198754;
+    }
+  </style>
+  <title>True Leaf</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-light bg-success">
+    <div class="container py-3">
+      <a href="javascript:history.back()"><i class="material-icons">arrow_back_ios_new</i></a>
+      <a class="navbar-brand" href="main.html" id="logo">True Leaf</a>
     </div>
+  </nav>
+  <div class="input-group">
+    <input type="search" class="form-control rounded" placeholder="Type in plant name" aria-label="Search"
+      aria-describedby="search-addon" />
+    <button type="button" class="btn btn-success">Search</button>
+  </div>
 
-    <div class="card-group">
-      <div class="row">
-        <div class="card col-auto">
-          <img
-            src="./images/plants/birdnest.png"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">
-              <strong>Bird's Nest Fern</strong>
-            </h5>
-            <h7 class="card-text"><em>Asplenium Nidus</em></h7>
-          </div>
+  <div class="card-group">
+    <div class="row">
+      <div class="card col-auto">
+        <img src="./images/plants/birdnest.png" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">
+            <strong>Bird's Nest Fern</strong>
+          </h5>
+          <h7 class="card-text"><em>Asplenium Nidus</em></h7>
         </div>
-        <div class="card col-auto">
-          <img
-            src="./images/plants/calathea.png"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">
-              <strong>Calathea</strong>
-            </h5>
-            <h7 class="card-text"><em>Calathea Roseopicta</em></h7>
-          </div>
+      </div>
+      <div class="card col-auto">
+        <img src="./images/plants/calathea.png" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">
+            <strong>Calathea</strong>
+          </h5>
+          <h7 class="card-text"><em>Calathea Roseopicta</em></h7>
         </div>
-        <div class="card col-auto">
-          <img
-            src="./images/plants/ficus_burgundy.png"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">
-              <strong>Ficus Burgundy</strong>
-            </h5>
-            <h7 class="card-text"><em>Ficus elastica ‘Burgundy’ </em></h7>
-          </div>
+      </div>
+      <div class="card col-auto">
+        <img src="./images/plants/ficus_burgundy.png" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">
+            <strong>Ficus Burgundy</strong>
+          </h5>
+          <h7 class="card-text"><em>Ficus elastica ‘Burgundy’ </em></h7>
         </div>
-        <div class="card col-auto">
-          <img
-            src="./images/plants/ficus_tineke.png"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">
-              <strong>Ficus Tineke</strong>
-            </h5>
-            <h7 class="card-text"><em>Ficus elastica ‘Tineke’ </em></h7>
-          </div>
+      </div>
+      <div class="card col-auto">
+        <img src="./images/plants/ficus_tineke.png" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">
+            <strong>Ficus Tineke</strong>
+          </h5>
+          <h7 class="card-text"><em>Ficus elastica ‘Tineke’ </em></h7>
         </div>
-        <div class="card col-auto">
-          <a href="plantinfo.html"
-            ><img
-              src="./images/plants/lavender.png"
-              class="card-img-top"
-              alt="..."
-          /></a>
-          <div class="card-body">
-            <a href="plantinfo.html" id="lavender"
-              ><h5 class="card-title">
-                <strong>Lavender</strong>
-              </h5></a
-            >
-            <h7 class="card-text"><em>Lavandula angustifolia</em></h7>
-          </div>
+      </div>
+      <div class="card col-auto">
+        <a href="plantinfo.html"><img src="./images/plants/lavender.png" class="card-img-top" alt="..." /></a>
+        <div class="card-body">
+          <a href="plantinfo.html" id="lavender">
+            <h5 class="card-title">
+              <strong>Lavender</strong>
+            </h5>
+          </a>
+          <h7 class="card-text"><em>Lavandula angustifolia</em></h7>
         </div>
       </div>
     </div>
-    <br /><br />
+  </div>
+  <br /><br />
 
-    <nav class="navbar fixed-bottom navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="main.html">
-          <i class="material-icons">home</i>
-        </a>
-        <a class="navbar-brand" href="#">
-          <i class="material-icons" style="color: #198754">search</i>
-        </a>
-        <a class="navbar-brand" href="#">
-          <i class="material-icons">favorite_border</i>
-        </a>
-        <a class="navbar-brand" href="profile.html">
-          <i class="material-icons">account_circle</i>
-        </a>
-      </div>
-    </nav>
+  <nav class="navbar fixed-bottom navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="main.html">
+        <i class="material-icons">home</i>
+      </a>
+      <a class="navbar-brand" href="#">
+        <i class="material-icons" style="color: #198754">search</i>
+      </a>
+      <a class="navbar-brand" href="#">
+        <i class="material-icons">favorite_border</i>
+      </a>
+      <a class="navbar-brand" href="profile.html">
+        <i class="material-icons">account_circle</i>
+      </a>
+    </div>
+  </nav>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
-  </body>
+</body>
+
 </html>
