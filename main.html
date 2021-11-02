@@ -42,6 +42,10 @@
         .material-icons {
             color: black;
         }
+
+        #backbutton {
+            color: black;
+        }
     </style>
     <title>True Leaf</title>
 </head>
@@ -49,6 +53,7 @@
 <body>
     <nav class="navbar navbar-light bg-success">
         <div class="container py-3">
+            <a href="javascript:history.back()"><i class="material-icons" id="backbutton">arrow_back_ios_new</i></a>
             <a class="navbar-brand" href="main.html" id="logo">True Leaf</a>
             <a href="login.html" class="btn btn-success" id="loginandsignup">Login/Signup</a>
         </div>
