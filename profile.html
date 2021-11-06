@@ -12,30 +12,40 @@
     <!-- Google Icons (Material Design)-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <!-- Firebase 8 CDNs-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+        </script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+
     <!-- Link to the api keys for your firebase project -->
     <script src="./scripts/firebaseAPI.js"></script>
 
-    <style>        
+    <style>
         #logo {
             margin-left: 35%;
         }
 
         a {
-            color: rgba(0,0,0,.9);
+            color: rgba(0, 0, 0, .9);
         }
-         
-        .user-profile{
-            display: grid; 
+
+        .user-profile {
+            display: grid;
             justify-content: center;
-            padding: 20px 0; 
+            padding: 20px 0;
         }
 
         .avatar {
-            display: grid; 
+            display: grid;
             justify-content: center;
         }
 
-        .avatar img{
+        .avatar img {
             border-radius: 100%;
         }
 
@@ -43,29 +53,31 @@
             text-align: center;
         }
 
-        .info .desc{
-            display:block;
+        .info .desc {
+            display: block;
         }
 
         .card-group {
             margin: 0 50px;
             justify-content: space-around;
         }
-        .card-group .row{
+
+        .card-group .row {
             justify-content: space-evenly;
             gap: 0.5em;
         }
 
         .card {
             border: none;
-            padding: 10px 0 ;
-            width: 18rem; 
+            padding: 10px 0;
+            width: 18rem;
         }
 
         .card-img-top {
             margin: 1% auto;
 
         }
+
         .navbar-brand {
             margin: auto;
         }
@@ -80,49 +92,57 @@
             <a class="navbar-brand" href="main.html" id="logo">True Leaf</a>
         </div>
     </nav>
-      <br>
-     <div class="user-profile">
-                <div class="avatar">
-                    <img alt="user display picture" src="https://i.pravatar.cc/150/">
-                </div>
-                <div class="info">
-                    <h5 class="title">
-                        <strong>ThePlantKiller</strong>
-                    </h5>
-                    <h7 class="desc">British Columbia, Canada</h7>
-                    <h7 class="desc">3 Plants</h7>
+    <br>
+    <div class="user-profile">
+        <div class="avatar">
+            <img alt="user display picture" src="https://i.pravatar.cc/150/">
+        </div>
+        <div class="info">
+            <h5 class="title" id="name-goes-here">
+                <strong>ThePlantKiller</strong>
+            </h5>
+            <h7 class="desc" id="address">British Columbia, Canada</h7>
+            <h7 class="desc" id="numberOfPlants">3 Plants</h7>
+        </div>
+    </div>
+
+    <div class="card-group">
+        <div class="row">
+            <div class="card col-auto">
+                <img src="./images/user_photos/ficus_burgundy.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="width: 380px; margin: auto;">
+                    <h5 class="card-title" style="display: inline;" id="BBY01"><strong>Unnamed #1</strong></h5>
+                    <h7 class="card-text" style="display: block;" id="one"><em>Ficus Burgundy</em></h7>
+                    <h7 class="card-text1" style="display: block;">Adopted on <span id='adopt1'>July 3, 2020</span></h7>
                 </div>
             </div>
+            <div class="card col-auto">
+                <img src="./images/user_photos/ficus_tineke.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="width: 380px; margin: auto;">
+                    <h5 class="card-title" style="display: inline;" id="BBY02"><strong>Ruby</strong></h5>
+                    <h7 class="card-text" style="display: block;" id="two"><em>Ficus Tineke</em></h7>
+                    <h7 class="card-text1" style="display: block;">Adopted on <span id='adopt2'>April 14, 2021</span></h7>
 
-<div class="card-group">
-  <div class="row">
-    <div class="card col-auto">
-      <img src="./images/user_photos/ficus_burgundy.jpg" class="card-img-top" alt="...">
-      <div class="card-body" style="width: 380px; margin: auto;">
-        <h5 class="card-title" style="display: inline;"><strong>Unnamed #1</strong></h5>
-        <h7 class="card-text" style="display: block;"><em>Ficus Burgundy</em></h7>
-        <h7 class="card-text" style="display: block;">Adopted on July 3, 2020</h7>
-      </div>
+                </div>
+            </div>
+            <div class="card col-auto">
+                <img src="./images/user_photos/zz_plant.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="width: 380px; margin: auto;">
+                    <h5 class="card-title" style="display: inline;" id="BBY03"><strong>Unnamed #2</strong></h5>
+                    <h7 class="card-text" style="display: block;" id="three"><em>ZZ Plant</em></h7>
+                    <h7 class="card-text1" style="display: block;">Adopted on <span id='adopt3'>August 10, 2021</span></h7>
+                </div>
+            </div>
+            <div class="card col-auto">
+                <img src="./images/user_photos/lavender.png" class="card-img-top" alt="...">
+                <div class="card-body" style="width: 380px; margin: auto;">
+                    <h5 class="card-title" style="display: inline;" id="BBY04"><strong>Unnamed #2</strong></h5>
+                    <h7 class="card-text" style="display: block;" id="four"><em>ZZ Plant</em></h7>
+                    <h7 class="card-text1" style="display: block;">Adopted on <span id='adopt4'>August 10, 2021</span></h7>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="card col-auto">
-      <img src="./images/user_photos/ficus_tineke.jpg" class="card-img-top" alt="...">
-      <div class="card-body" style="width: 380px; margin: auto;">
-        <h5 class="card-title" style="display: inline;"><strong>Ruby</strong></h5>
-        <h7 class="card-text" style="display: block;"><em>Ficus Tineke</em></h7>
-                <h7 class="card-text" style="display: block;">Adopted on April 14, 2021</h7>
-        
-      </div>
-    </div>
-    <div class="card col-auto">
-      <img src="./images/user_photos/zz_plant.jpg" class="card-img-top" alt="...">
-      <div class="card-body" style="width: 380px; margin: auto;">
-        <h5 class="card-title" style="display: inline;"><strong>Unnamed #2</strong></h5>
-        <h7 class="card-text" style="display: block;"><em>ZZ Plant</em></h7>
-                <h7 class="card-text" style="display: block;">Adopted on August 10, 2021</h7>
-      </div>
-    </div>
-  </div>
-</div>
     <br><br>
 
     <nav class="navbar fixed-bottom navbar-light bg-light">
@@ -145,7 +165,45 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+    </script>
+    
+    <script>
+        function insertName() {
+            firebase.auth().onAuthStateChanged(user => {
+                if (user) {
+                    currentUser = db.collection("users").doc(user.uid);
+                    currentUser.get()
+                        .then(userDoc => {
+                            var user_Name = userDoc.data().name;
+                            console.log(user_Name);
+                            document.getElementById("name-goes-here").innerText = user_Name;
+                        })
+                } else {
+                    // No user is signed in.
+                }
+            });
+        }
+        insertName();
+
+        function displayPlants() {
+            db.collection("users").doc("user").collection("plants").get()
+                .then(allplants => {
+                    allplants.forEach(doc => {
+                        var plantNickname = doc.data().nickname;
+                        var plantID = doc.data().code_nickname;
+                        document.getElementById(plantID).innerText = plantNickname;
+                        var plantName = doc.data().name;
+                        var plantnameID = doc.data().code_name;
+                        document.getElementById(plantnameID).innerText = plantName;
+                        var plantAdopt = doc.data().adoption;
+                        var plantadoptID = doc.data().code_adopt;
+                        document.getElementById(plantadoptID).innerText = plantAdopt;
+                    })
+                })
+        }
+        displayPlants();
+    </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
