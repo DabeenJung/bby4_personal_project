@@ -39,8 +39,9 @@
         }
 
         #logo {
-            margin-right:45%;
+            margin-right: 45%;
         }
+
         #firebaseui-auth-container {
             margin-top: 20%;
         }
@@ -68,7 +69,48 @@
                     // User successfully signed in.
                     // Return type determines whether we continue the redirect automatically
                     // or whether we leave that to developer to handle.
-                    return true;
+                    var user = authResult.user;
+
+                    if (authResult.additionalUserInfo.isNewUser) {
+                        db.collection("users").doc(user.uid).set({
+                            name: user.displayName,
+                            email: user.email
+                        }).then(function () {
+                            window.location.assign("main.html");
+                        })
+                            .catch(function (error) {
+                                console.log("Error adding new user: " + error);
+                            });
+                    } else {
+                        return true;
+                    }
+                    // function writePlants() {
+                    //     var plantsRef = db.collection("users").doc(user.uid).collection("plants");
+
+                    //     plantsRef.add({
+                    //         name: "Ficus Burgundy",
+                    //         nickName: "ficus",
+                    //         code: "BBY01",
+                    //         water: "once a week",
+                    //         adoption: "July 3, 2020"
+                    //     });
+                    //     plantsRef.add({
+                    //         name: "Ficus Tineke",
+                    //         nickName: "Ruby",
+                    //         code: "BBY02",
+                    //         water: "once a week",
+                    //         adoption: "April 14, 2021"
+                    //     });
+                    //     plantsRef.add({
+                    //         name: "ZZ Plant",
+                    //         nickName: "zz",
+                    //         code: "BBY03",
+                    //         water: "once every two weeks",
+                    //         adoption: "August 10, 2021"
+                    //     });
+                    // }
+                    // writePlants();
+                    return false;
                 },
                 uiShown: function () {
                     // The widget is rendered.
