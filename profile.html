@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -28,72 +28,61 @@
     <style>
         #logo {
             margin-left: 35%;
-            margin-right: auto;
         }
 
         a {
             color: rgba(0, 0, 0, .9);
         }
 
+        .user-profile {
+            display: grid;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .avatar {
+            display: grid;
+            justify-content: center;
+        }
+
+        .avatar img {
+            border-radius: 100%;
+        }
+
+        .info {
+            text-align: center;
+        }
+
+        .info .desc {
+            display: block;
+        }
+
+        .card-group {
+            margin: 0 50px;
+            justify-content: space-around;
+        }
+
+        .card-group .row {
+            justify-content: space-evenly;
+            gap: 0.5em;
+        }
+
+        .card {
+            border: none;
+            padding: 10px 0;
+            width: 18rem;
+        }
+
+        .card-img-top {
+            margin: 1% auto;
+
+        }
+
         .navbar-brand {
             margin: auto;
         }
-
-        .card-body {
-            display: inline-block;
-            padding: 0;
-            margin-top: 10px;
-        }
-
-        .box img {
-            width: 100px;
-            margin: auto;
-        }
-
-        .card-title {
-            display: inline;
-        }
-
-        #favorite {
-            font-size: 20px;
-            grid-column: 3 / span 1;
-            
-        }
-        .box a {
-            margin: 12px auto;
-        }
-
-        #lavendername {
-            text-decoration: none;
-        }
-
-        #lavendername:hover {
-            color: #198754;
-        }
-
-        .box {
-            margin: 30px 0;
-            display: grid;
-            grid-template-columns: 33% 45% 22%;
-        }
-        .img-fluid.rounded-start {
-            grid-column: 1 / span 1;
-        }
-        #name {
-            font-size: 28px;
-            margin: 20px;
-            background-color: rgb(228, 250, 215);
-            border-radius: 1em;
-        }
-        #name p {
-            text-align: center;
-        }
-        #name-goes-here {
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
     </style>
-
-    <title>Bookmark</title>
+    <title>True Leaf</title>
 </head>
 
 <body>
@@ -103,40 +92,58 @@
             <a class="navbar-brand" href="main.html" id="logo">True Leaf</a>
         </div>
     </nav>
-
-    <div id='name'>
-        <p><span id='name-goes-here'>name</span>'s bookmark</p>
-    </div>
-
-    <div class="box">
-        <img src="images/plants/lavender.png" alt="..." class="img-fluid rounded-start" >
-        <div class="card-body">
-            <a href="plantinfo.html" id="lavendername">
-                <h4 class="card-title">Lavender</h5>
-            </a>
-            <p class="card-text"><small class="text-muted">Saved 3 mins ago</small></p>
+    <br>
+    <div class="user-profile">
+        <div class="avatar">
+            <img alt="user display picture" src="https://i.pravatar.cc/150/">
         </div>
-        <a href=""><i class="material-icons" id='favorite'>favorite</i></a>
-    </div>
-
-    <div class="box">
-        <img src="images/plants/calathea.png" class="img-fluid rounded-start" alt="...">
-        <div class="card-body">
-            <h4 class="card-title">Calathea</h5>
-                <p class="card-text"><small class="text-muted">Saved 2 days ago</small></p>
+        <div class="info">
+            <h5 class="title" id="name-goes-here">
+                <strong>ThePlantKiller</strong>
+            </h5>
+            <h7 class="desc" id="address">British Columbia, Canada</h7>
+            <h7 class="desc" id="numberOfPlants">3 Plants</h7>
         </div>
-        <a href=""><i class="material-icons" id='favorite'>favorite</i></a>
     </div>
 
-    <div class="box">
-        <img src="images/plants/birdnest.png" class="img-fluid rounded-start" alt="...">
-        <div class="card-body">
-            <h4 class="card-title">Bird's nest fern</h5>
-                <p class="card-text"><small class="text-muted">Saved 5 days ago</small></p>
+    <div class="card-group">
+        <div class="row">
+            <div class="card col-auto">
+                <img src="./images/user_photos/ficus_burgundy.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="width: 380px; margin: auto;">
+                    <h5 class="card-title" style="display: inline;" id="BBY01"><strong>Unnamed #1</strong></h5>
+                    <h7 class="card-text" style="display: block;" id="one"><em>Ficus Burgundy</em></h7>
+                    <h7 class="card-text1" style="display: block;">Adopted on <span id='adopt1'>July 3, 2020</span></h7>
+                </div>
+            </div>
+            <div class="card col-auto">
+                <img src="./images/user_photos/ficus_tineke.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="width: 380px; margin: auto;">
+                    <h5 class="card-title" style="display: inline;" id="BBY02"><strong>Ruby</strong></h5>
+                    <h7 class="card-text" style="display: block;" id="two"><em>Ficus Tineke</em></h7>
+                    <h7 class="card-text1" style="display: block;">Adopted on <span id='adopt2'>April 14, 2021</span></h7>
+
+                </div>
+            </div>
+            <div class="card col-auto">
+                <img src="./images/user_photos/zz_plant.jpg" class="card-img-top" alt="...">
+                <div class="card-body" style="width: 380px; margin: auto;">
+                    <h5 class="card-title" style="display: inline;" id="BBY03"><strong>Unnamed #2</strong></h5>
+                    <h7 class="card-text" style="display: block;" id="three"><em>ZZ Plant</em></h7>
+                    <h7 class="card-text1" style="display: block;">Adopted on <span id='adopt3'>August 10, 2021</span></h7>
+                </div>
+            </div>
+            <div class="card col-auto">
+                <img src="./images/user_photos/lavender.png" class="card-img-top" alt="...">
+                <div class="card-body" style="width: 380px; margin: auto;">
+                    <h5 class="card-title" style="display: inline;" id="BBY04"><strong>Unnamed #2</strong></h5>
+                    <h7 class="card-text" style="display: block;" id="four"><em>ZZ Plant</em></h7>
+                    <h7 class="card-text1" style="display: block;">Adopted on <span id='adopt4'>August 10, 2021</span></h7>
+                </div>
+            </div>
         </div>
-        <a href=""><i class="material-icons" id='favorite'>favorite</i></a>
     </div>
-
+    <br><br>
 
     <nav class="navbar fixed-bottom navbar-light bg-light">
         <div class="container-fluid">
@@ -147,14 +154,20 @@
                 <i class="material-icons">search</i>
             </a>
             <a class="navbar-brand" href="bookmark.html">
-                <i class="material-icons" style="color: #198754">favorite_border</i>
+                <i class="material-icons">favorite_border</i>
             </a>
             <a class="navbar-brand" href="profile.html">
-                <i class="material-icons">account_circle</i>
+                <i class="material-icons" style="color: #198754">account_circle</i>
             </a>
         </div>
     </nav>
 
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous">
+    </script>
+    
     <script>
         function insertName() {
             firebase.auth().onAuthStateChanged(user => {
@@ -172,7 +185,31 @@
             });
         }
         insertName();
+
+        function displayPlants() {
+            db.collection("users").doc("user").collection("plants").get()
+                .then(allplants => {
+                    allplants.forEach(doc => {
+                        var plantNickname = doc.data().nickname;
+                        var plantID = doc.data().code_nickname;
+                        document.getElementById(plantID).innerText = plantNickname;
+                        var plantName = doc.data().name;
+                        var plantnameID = doc.data().code_name;
+                        document.getElementById(plantnameID).innerText = plantName;
+                        var plantAdopt = doc.data().adoption;
+                        var plantadoptID = doc.data().code_adopt;
+                        document.getElementById(plantadoptID).innerText = plantAdopt;
+                    })
+                })
+        }
+        displayPlants();
     </script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
 </body>
 
 </html>
