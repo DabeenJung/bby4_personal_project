@@ -59,16 +59,43 @@
         #information{
             grid-row:5;
             grid-column:1/4;
-            margin-right:1rem;
-            margin-top:2rem;
-            margin-left:1rem;
-            margin-bottom:5rem;
+            text-align: center;
+            margin-bottom: 1em;
+            margin-top: 1em;
         }
         #lavenderpic {
             width: 100%;
         }
         .container-fluid a {
             margin: auto;
+        }
+
+        #water{
+            grid-row:6;
+            grid-column:1/4;
+            justify-content: center;
+            display:flex;
+            margin-bottom: 1em;
+        }
+
+        #sun{
+            grid-row:7;
+            grid-column:1/4;
+            justify-content: center;
+            display:flex;
+            margin-bottom: 1em;
+        }
+
+        #nutrient{
+            grid-row:8;
+            grid-column:1/4;
+            margin-bottom: 5rem;
+            justify-content: center;
+            display:flex;
+        }
+
+        body{
+            padding-bottom: 4rem;
         }
 
     </style>
@@ -119,14 +146,44 @@
             </nav>
         </div>
 
-    
-
-        <div id="information">
-            <b>About Lavender</b>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui optio quo asperiores, veniam hic reprehenderit autem error ut laudantium? Maiores, neque at aliquam sunt voluptatem, ducimus cupiditate quia doloremque itaque deserunt porro quos. Enim sed a reiciendis id cupiditate eum consectetur ab quos voluptates vitae, accusantium molestiae? Ullam, iusto quasi.</p>
+        <div id = "information">
+            <h5>True Leaf Recommends: </h5>
         </div>
+
+        <div class="card border-secondary mb-3" style="max-width: 18rem; margin-left: 2rem">
+            <div style="text-align:center" class="card-header"><i class="material-icons">water_drop</i> </div>
+            <div class="card-body text-primary">
+              <h5 style="color: black; text-align: center" class="card-title">Water</h5>
+              <p style="color: black" class="card-text">0.5 cups every 9 days</p>
+              
+              <p style = "color:black">Would you like to be reminded when to water your plant?</p>
+              <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                <input type="radio" class="btn-check" name="btnradio_water" id="btnradio_water1" autocomplete="off" checked>
+                <label class="btn btn-outline-primary" for="btnradio_water1">Yes</label>
+              
+                <input type="radio" class="btn-check" name="btnradio_water" id="btnradio_water2" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btnradio_water2">No</label>
+            </div>
     
-  
+            </div>
+        </div>
+
+        <div class="card border-secondary mb-3" style="max-width: 18rem; margin-right: 1rem; margin-left: 1rem">
+            <div style="text-align:center" class="card-header"><i class="material-icons">light_mode</i> </div>
+            <div class="card-body text-primary">
+              <h5 style="color: black; text-align: center" class="card-title">Placement</h5>
+              <p style="color: black" class="card-text">&lt; 1 ft from a window</p>
+            </div>
+        </div>
+
+        <div class="card border-secondary mb-3" style="max-width: 18rem; margin-right: 2rem">
+            <div style="text-align:center" class="card-header"><i class="material-icons">yard</i> </div>
+            <div class="card-body text-primary">
+              <h5 style="color: black; text-align: center" class="card-title">Nutrients</h5>
+              <p style="color: black" class="card-text">Repot after 2x growth</p>
+            </div>
+        </div>
+
 
         <nav class="navbar fixed-bottom navbar-light bg-light">
             <div class="container-fluid">
