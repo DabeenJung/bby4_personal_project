@@ -182,20 +182,69 @@
         }
         insertName();
 
+        // function displayBookmark() {
+        //     firebase.auth().onAuthStateChanged(user => {
+        //         if (user){
+        //         var currentUser = db.collection("users").doc(user.uid);
+        //         currentUser.collection("bookmark").get()
+        //             .then(allplants => {
+        //                 allplants.forEach(doc => {
+        //                     var plantName = doc.data().name;
+        //                     var plantNameID = doc.data().code;
+        //                     console.log(plantNameID);
+        //                     console.log(plantName);
+        //                     document.getElementById(plantNameID).innerText = plantName;                     
+        //                 })
+        //             })
+        //         }
+        //     })
+        // }
+        // displayBookmark();
+
+        function writeBookmarks() {
+            firebase.auth().onAuthStateChanged(user => {
+                if (user) {
+                    currentUser = db.collection("users").doc(user.uid);
+                    var bookmark = currentUser.collection("bookmark");
+
+                    bookmark.add({
+                        code: "BBY01",
+                        name: "Ficus Burgundy",
+                        nickName: "Ficus",
+                        water: "once a week",
+                        adoption: "July 3, 2020"
+                    });
+                    bookmark.add({
+                        code: "BBY02",
+                        name: "Ficus Tineke",
+                        nickName: "Ruby",
+                        water: "once a week",
+                        adoption: "April 14, 2021"
+                    });
+                    bookmark.add({
+                        code: "BBY03",
+                        name: "ZZ Plant",
+                        nickName: "ZZ",
+                        water: "once every two weeks",
+                        adoption: "August 10, 2021"
+                    });
+                }
+            })
+        }
+
+        // writeBookmarks();
+
         function displayBookmark() {
             firebase.auth().onAuthStateChanged(user => {
-                if (user){
-                var currentUser = db.collection("users").doc(user.uid);
-                currentUser.collection("bookmark").get()
-                    .then(allplants => {
-                        allplants.forEach(doc => {
-                            var plantName = doc.data().name;
-                            var plantNameID = doc.data().code;
-                            console.log(plantNameID);
-                            console.log(plantName);
-                            document.getElementById(plantNameID).innerText = plantName;                     
+                if (user) {
+                    db.collection("users").doc(user.uid).collection("bookmark").get()
+                        .then(allbookmark => {
+                            allbookmark.forEach(doc => {
+                                var plantName = doc.data().name;
+                                var plantId = doc.data().code;
+                                document.getElementById(plantId).innerText = plantName;
+                            })
                         })
-                    })
                 }
             })
         }
