@@ -81,6 +81,16 @@
         .navbar-brand {
             margin: auto;
         }
+
+        .card-title {
+            display: inline;
+        }
+        .card-text1 {
+            display: block;
+        }
+        .card-text {
+            display: block;
+        }
     </style>
     <title>True Leaf</title>
 </head>
@@ -107,42 +117,11 @@
     </div>
 
     <div class="card-group">
-        <div class="row">
-            <div class="card col-auto">
-                <img src="./images/user_photos/ficus_burgundy.jpg" class="card-img-top" alt="...">
-                <div class="card-body" style="width: 380px; margin: auto;">
-                    <h5 class="card-title" style="display: inline;" id="BBY01"><strong>Unnamed #1</strong></h5>
-                    <h7 class="card-text" style="display: block;" id="one"><em>Ficus Burgundy</em></h7>
-                    <h7 class="card-text1" style="display: block;">Adopted on <span id='adopt1'>July 3, 2020</span></h7>
-                </div>
-            </div>
-            <div class="card col-auto">
-                <img src="./images/user_photos/ficus_tineke.jpg" class="card-img-top" alt="...">
-                <div class="card-body" style="width: 380px; margin: auto;">
-                    <h5 class="card-title" style="display: inline;" id="BBY02"><strong>Ruby</strong></h5>
-                    <h7 class="card-text" style="display: block;" id="two"><em>Ficus Tineke</em></h7>
-                    <h7 class="card-text1" style="display: block;">Adopted on <span id='adopt2'>April 14, 2021</span></h7>
+        <div id="plant-cards" class="row">
 
-                </div>
-            </div>
-            <div class="card col-auto">
-                <img src="./images/user_photos/zz_plant.jpg" class="card-img-top" alt="...">
-                <div class="card-body" style="width: 380px; margin: auto;">
-                    <h5 class="card-title" style="display: inline;" id="BBY03"><strong>Unnamed #2</strong></h5>
-                    <h7 class="card-text" style="display: block;" id="three"><em>ZZ Plant</em></h7>
-                    <h7 class="card-text1" style="display: block;">Adopted on <span id='adopt3'>August 10, 2021</span></h7>
-                </div>
-            </div>
-            <div class="card col-auto">
-                <img src="./images/user_photos/lavender.png" class="card-img-top" alt="...">
-                <div class="card-body" style="width: 380px; margin: auto;">
-                    <h5 class="card-title" style="display: inline;" id="BBY04"><strong>Unnamed #2</strong></h5>
-                    <h7 class="card-text" style="display: block;" id="four"><em>ZZ Plant</em></h7>
-                    <h7 class="card-text1" style="display: block;">Adopted on <span id='adopt4'>August 10, 2021</span></h7>
-                </div>
-            </div>
         </div>
     </div>
+
     <br><br>
 
     <nav class="navbar fixed-bottom navbar-light bg-light">
@@ -153,8 +132,8 @@
             <a class="navbar-brand" href="plants.html">
                 <i class="material-icons">search</i>
             </a>
-            <a class = "navbar-brand" href = "#">
-                <i class = "material-icons"> add_circle_outline</i>
+            <a class="navbar-brand" href="add.html">
+                <i class="material-icons"> add_circle_outline</i>
             </a>
             <a class="navbar-brand" href="bookmark.html">
                 <i class="material-icons">favorite_border</i>
@@ -167,10 +146,9 @@
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous">
-    </script>
-    
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+
     <script>
         function insertName() {
             firebase.auth().onAuthStateChanged(user => {
@@ -189,67 +167,42 @@
         }
         insertName();
 
-        // var currentUser;
-        // function writePlants() {
-        //     firebase.auth().onAuthStateChanged(user => {
-        //         if (user) {
-        //             currentUser = db.collection("users").doc(user.uid);
-        //             var plants = currentUser.collection("plants");
-
-        //             plants.add({
-        //                 code_nickname: "BBY01",
-        //                 nickname: "Ficus",
-        //                 name: "Ficus Burgundy",
-        //                 code_name: "one",
-        //                 adoption: "July 3, 2020",
-        //                 code_adopt: "adopt1"
-        //             });
-        //             plants.add({
-        //                 code_nickname: "BBY02",
-        //                 nickname: "Ruby",
-        //                 name: "Ficus Tineke",
-        //                 code_name: "two",
-        //                 adoption: "April 14, 2021",
-        //                 code_adopt: "adopt2"
-        //             });
-        //             plants.add({
-        //                 code_nickname: "BBY03",
-        //                 nickname: "ZZ",
-        //                 name: "ZZ Plant",
-        //                 code_name: "three",
-        //                 adoption: "August 10, 2021",
-        //                 code_adopt: "adopt3"
-        //             });
-        //             plants.add({
-        //                 code_nickname: "BBY04",
-        //                 nickname: "Lalala",
-        //                 name: "Lavender",
-        //                 code_name: "four",
-        //                 adoption: "May 24, 2021",
-        //                 code_adopt: "adopt4"
-        //             });
-        //         }
-        //     })
-        // }
-        // writePlants();
-
         function displayPlants() {
+            const plantCards = document.getElementById("plant-cards");
+
             firebase.auth().onAuthStateChanged(user => {
                 if (user) {
                     db.collection("users").doc(user.uid).collection("plants").get()
                         .then(allplants => {
                             allplants.forEach(doc => {
-                                var plantNickname = doc.data().nickname;
-                                var plantID = doc.data().code_nickname;
-                                document.getElementById(plantID).innerText = plantNickname;
-                                var plantName = doc.data().name;
-                                var plantnameID = doc.data().code_name;
-                                document.getElementById(plantnameID).innerText = plantName;
-                                var plantAdopt = doc.data().adoption;
-                                var plantadoptID = doc.data().code_adopt;
-                                document.getElementById(plantadoptID).innerText = plantAdopt;
-                    })
-                })
+                                let nickname = doc.data().nickname;
+                                let name = doc.data().common_name;
+                                let imageName = name.replaceAll(" ", "_").toLowerCase();
+                                let adoption = doc.data().adoption;
+                                let card = document.createElement("div");
+                                card.setAttribute("class", "card col-auto");
+                                let photo = document.createElement("img");
+                                photo.setAttribute("src", "./images/plants/" + imageName + ".png");
+                                let cardCaption = document.createElement("div");
+                                cardCaption.setAttribute("class", "card-body");
+                                let cardTitle = document.createElement("h5");
+                                cardTitle.setAttribute("class", "card-title");
+                                cardTitle.innerHTML = "<strong>" + nickname + "</strong>";
+                                let cardText = document.createElement("h7");
+                                cardText.setAttribute("class", "card-text");
+                                cardText.innerHTML = "<em>" + name + "</em>";
+                                let cardAdoption = document.createElement("h7");
+                                cardAdoption.setAttribute("class", "card-text1");
+                                cardAdoption.innerHTML = adoption;
+                                plantCards.appendChild(card);
+                                card.appendChild(photo);
+                                card.appendChild(cardCaption);
+                                cardCaption.appendChild(cardTitle);
+                                cardCaption.appendChild(cardText);
+                                cardCaption.appendChild(cardAdoption);
+                            })
+                        })
+
                 }
             })
         }

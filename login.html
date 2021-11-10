@@ -70,7 +70,7 @@
             <a class="navbar-brand" href="plants.html">
                 <i class="material-icons">search</i>
             </a>
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="add.html">
                 <i class="material-icons"> add_circle_outline</i>
             </a>
             <a class="navbar-brand" href="bookmark.html">
@@ -139,40 +139,24 @@
                         var plants = db.collection("users").doc(user.uid).collection("plants");
 
                         plants.add({
-                            name: "Ficus Burgundy",
+                            common_name: "Ficus Burgundy",
                             nickname: "ficus",
-                            code_nickname: "BBY01",
-                            water: "once a week",
-                            adoption: "July 3, 2020",
-                            code_name: "one",
-                            code_adopt: "adopt1"
+                            adoption: "Adopted on 2020-07-03"
                         });
                         plants.add({
-                            name: "Ficus Tineke",
-                            code_name: "two",
+                            common_name: "Ficus Tineke",
                             nickname: "Ruby",
-                            code_nickname: "BBY02",
-                            water: "once a week",
-                            adoption: "April 14, 2021",
-                            code_adopt: "adopt2"
+                            adoption: "Adopted on 2021-08-14"
                         });
                         plants.add({
-                            name: "ZZ Plant",
-                            code_name: "three",
+                            common_name: "ZZ Plant",
                             nickname: "zz",
-                            code_nickname: "BBY03",
-                            water: "once every two weeks",
-                            adoption: "August 10, 2021",
-                            code_adopt: "adopt3"
+                            adoption: "Adopted on 2021-08-10"
                         });
                         plants.add({
-                            name: "Lavender",
-                            code_name: "four",
+                            common_name: "Lavender",
                             nickname: "Lalala",
-                            code_nickname: "BBY04",
-                            water: "once every two weeks",
-                            adoption: "May 24, 2021",
-                            code_adopt: "adopt4"
+                            adoption: "Adopted on 2021-05-24"
                         });
                     }
                     writePlants();

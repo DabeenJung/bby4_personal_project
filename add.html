@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Google Icons (Material Design)-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Firebase 8 CDNs-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+        </script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+
+    <!-- Link to the api keys for your firebase project -->
+    <script src="./scripts/firebaseAPI.js"></script>
+    <style>
+        .navbar-brand {
+            margin: auto;
+        }
+
+        a {
+            color: rgba(0, 0, 0, .9);
+        }
+
+        #title {
+            margin: 20px 35% ;
+        }
+
+        #logo {
+            margin-left: 35%;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-success">
+        <div class="container py-3">
+            <a href="javascript:history.back()"><i class="material-icons">arrow_back_ios_new</i></a>
+            <a class="navbar-brand" href="main.html" id="logo">True Leaf</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 id='title'>New Plant</h1>
+        <form>
+            <fieldset class="mb-3" id="personalInfoFields">
+                <br>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" id="nameInput" class="form-control" placeholder="Enter plant's name">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label>Nickname</label>
+                    <input type="text" id="nicknameInput" class="form-control" placeholder="Enter plant's nickname">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label>Adoption</label>
+                    <input type="date" id="adoptionInput" class="form-control" placeholder="Enter adoption date">
+                </div>
+            </fieldset>
+            <div class="d-flex justify-content-end mt-5">
+                <button type="button" class="btn btn-success" onclick="savePlantInfo()">Save</button>
+            </div>
+        </form>
+    </div>
+
+    <nav class="navbar fixed-bottom navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="main.html">
+                <i class="material-icons">home</i>
+            </a>
+            <a class="navbar-brand" href="plants.html">
+                <i class="material-icons">search</i>
+            </a>
+            <a class="navbar-brand" href="add.html">
+                <i class="material-icons" style="color: #198754"> add_circle_outline</i>
+            </a>
+            <a class="navbar-brand" href="bookmark.html">
+                <i class="material-icons">favorite_border</i>
+            </a>
+            <a class="navbar-brand" href="profile.html">
+                <i class="material-icons">account_circle</i>
+            </a>
+        </div>
+    </nav>
+
+    <script>
+        var currentUser;
+
+        function savePlantInfo() {
+            firebase.auth().onAuthStateChanged(user => {
+                if (user) {
+                    currentUser = db.collection("users").doc(user.uid).collection("plants");
+
+                    plantName = document.getElementById("nameInput").value;
+                    plantNickname = document.getElementById("nicknameInput").value;
+                    plantAdoption = document.getElementById("adoptionInput").value;
+                    adoptedon = "Adopted on "
+
+                    currentUser.add ({
+                        common_name: plantName,
+                        nickname: plantNickname,
+                        adoption: adoptedon + plantAdoption
+                    })
+                    alert("New plant is added!");
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
