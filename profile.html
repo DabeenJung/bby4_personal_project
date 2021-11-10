@@ -193,8 +193,8 @@
             db.collection("users").doc("user").collection("plants").get()
                 .then(allplants => {
                     allplants.forEach(doc => {
-                        var plantNickname = doc.data().nickname;
-                        var plantID = doc.data().code_nickname;
+                        var plantNickname = doc.data().nickName;
+                        var plantID = doc.data().code_nickName;
                         document.getElementById(plantID).innerText = plantNickname;
                         var plantName = doc.data().name;
                         var plantnameID = doc.data().code_name;
