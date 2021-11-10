@@ -102,7 +102,7 @@
                 <strong>ThePlantKiller</strong>
             </h5>
             <h7 class="desc" id="address">British Columbia, Canada</h7>
-            <h7 class="desc" id="numberOfPlants">3 Plants</h7>
+            <h7 class="desc" id="numberOfPlants">4 Plants</h7>
         </div>
     </div>
 
@@ -189,21 +189,69 @@
         }
         insertName();
 
+        var currentUser;
+        function writePlants() {
+            firebase.auth().onAuthStateChanged(user => {
+                if (user) {
+                    currentUser = db.collection("users").doc(user.uid);
+                    var plants = currentUser.collection("plants");
+
+                    plants.add({
+                        code_nickname: "BBY01",
+                        nickname: "Ficus",
+                        name: "Ficus Burgundy",
+                        code_name: "one",
+                        adoption: "July 3, 2020",
+                        code_adopt: "adopt1"
+                    });
+                    plants.add({
+                        code_nickname: "BBY02",
+                        nickname: "Ruby",
+                        name: "Ficus Tineke",
+                        code_name: "two",
+                        adoption: "April 14, 2021",
+                        code_adopt: "adopt2"
+                    });
+                    plants.add({
+                        code_nickname: "BBY03",
+                        nickname: "ZZ",
+                        name: "ZZ Plant",
+                        code_name: "three",
+                        adoption: "August 10, 2021",
+                        code_adopt: "adopt3"
+                    });
+                    plants.add({
+                        code_nickname: "BBY04",
+                        nickname: "Lalala",
+                        name: "Lavender",
+                        code_name: "four",
+                        adoption: "May 24, 2021",
+                        code_adopt: "adopt4"
+                    });
+                }
+            })
+        }
+        // writePlants();
+
         function displayPlants() {
-            db.collection("users").doc("user").collection("plants").get()
-                .then(allplants => {
-                    allplants.forEach(doc => {
-                        var plantNickname = doc.data().nickName;
-                        var plantID = doc.data().code_nickName;
-                        document.getElementById(plantID).innerText = plantNickname;
-                        var plantName = doc.data().name;
-                        var plantnameID = doc.data().code_name;
-                        document.getElementById(plantnameID).innerText = plantName;
-                        var plantAdopt = doc.data().adoption;
-                        var plantadoptID = doc.data().code_adopt;
-                        document.getElementById(plantadoptID).innerText = plantAdopt;
+            firebase.auth().onAuthStateChanged(user => {
+                if (user) {
+                    db.collection("users").doc(user.uid).collection("plants").get()
+                        .then(allplants => {
+                            allplants.forEach(doc => {
+                                var plantNickname = doc.data().nickname;
+                                var plantID = doc.data().code_nickname;
+                                document.getElementById(plantID).innerText = plantNickname;
+                                var plantName = doc.data().name;
+                                var plantnameID = doc.data().code_name;
+                                document.getElementById(plantnameID).innerText = plantName;
+                                var plantAdopt = doc.data().adoption;
+                                var plantadoptID = doc.data().code_adopt;
+                                document.getElementById(plantadoptID).innerText = plantAdopt;
                     })
                 })
+                }
+            })
         }
         displayPlants();
     </script>
