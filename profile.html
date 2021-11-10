@@ -189,48 +189,48 @@
         }
         insertName();
 
-        var currentUser;
-        function writePlants() {
-            firebase.auth().onAuthStateChanged(user => {
-                if (user) {
-                    currentUser = db.collection("users").doc(user.uid);
-                    var plants = currentUser.collection("plants");
+        // var currentUser;
+        // function writePlants() {
+        //     firebase.auth().onAuthStateChanged(user => {
+        //         if (user) {
+        //             currentUser = db.collection("users").doc(user.uid);
+        //             var plants = currentUser.collection("plants");
 
-                    plants.add({
-                        code_nickname: "BBY01",
-                        nickname: "Ficus",
-                        name: "Ficus Burgundy",
-                        code_name: "one",
-                        adoption: "July 3, 2020",
-                        code_adopt: "adopt1"
-                    });
-                    plants.add({
-                        code_nickname: "BBY02",
-                        nickname: "Ruby",
-                        name: "Ficus Tineke",
-                        code_name: "two",
-                        adoption: "April 14, 2021",
-                        code_adopt: "adopt2"
-                    });
-                    plants.add({
-                        code_nickname: "BBY03",
-                        nickname: "ZZ",
-                        name: "ZZ Plant",
-                        code_name: "three",
-                        adoption: "August 10, 2021",
-                        code_adopt: "adopt3"
-                    });
-                    plants.add({
-                        code_nickname: "BBY04",
-                        nickname: "Lalala",
-                        name: "Lavender",
-                        code_name: "four",
-                        adoption: "May 24, 2021",
-                        code_adopt: "adopt4"
-                    });
-                }
-            })
-        }
+        //             plants.add({
+        //                 code_nickname: "BBY01",
+        //                 nickname: "Ficus",
+        //                 name: "Ficus Burgundy",
+        //                 code_name: "one",
+        //                 adoption: "July 3, 2020",
+        //                 code_adopt: "adopt1"
+        //             });
+        //             plants.add({
+        //                 code_nickname: "BBY02",
+        //                 nickname: "Ruby",
+        //                 name: "Ficus Tineke",
+        //                 code_name: "two",
+        //                 adoption: "April 14, 2021",
+        //                 code_adopt: "adopt2"
+        //             });
+        //             plants.add({
+        //                 code_nickname: "BBY03",
+        //                 nickname: "ZZ",
+        //                 name: "ZZ Plant",
+        //                 code_name: "three",
+        //                 adoption: "August 10, 2021",
+        //                 code_adopt: "adopt3"
+        //             });
+        //             plants.add({
+        //                 code_nickname: "BBY04",
+        //                 nickname: "Lalala",
+        //                 name: "Lavender",
+        //                 code_name: "four",
+        //                 adoption: "May 24, 2021",
+        //                 code_adopt: "adopt4"
+        //             });
+        //         }
+        //     })
+        // }
         // writePlants();
 
         function displayPlants() {

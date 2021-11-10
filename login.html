@@ -20,7 +20,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
@@ -46,6 +46,7 @@
         #firebaseui-auth-container {
             margin-top: 20%;
         }
+
         .container-fluid a {
             margin: auto;
         }
@@ -69,8 +70,8 @@
             <a class="navbar-brand" href="plants.html">
                 <i class="material-icons">search</i>
             </a>
-            <a class = "navbar-brand" href = "#">
-                <i class = "material-icons"> add_circle_outline</i>
+            <a class="navbar-brand" href="#">
+                <i class="material-icons"> add_circle_outline</i>
             </a>
             <a class="navbar-brand" href="bookmark.html">
                 <i class="material-icons">favorite_border</i>
@@ -109,6 +110,58 @@
                     } else {
                         return true;
                     }
+
+                    function writePlants() {
+                        var plantsRef = db.collection("users").doc(user.uid).collection("plants");
+
+                        plantsRef.add({
+                            name: "Ficus Burgundy",
+                            nickName: "ficus",
+                            code: "BBY01",
+                            water: "once a week",
+                            adoption: "July 3, 2020"
+                        });
+                        plantsRef.add({
+                            name: "Ficus Tineke",
+                            nickName: "Ruby",
+                            code: "BBY02",
+                            water: "once a week",
+                            adoption: "April 14, 2021"
+                        });
+                        plantsRef.add({
+                            name: "ZZ Plant",
+                            nickName: "zz",
+                            code: "BBY03",
+                            water: "once every two weeks",
+                            adoption: "August 10, 2021"
+                        });
+                    }
+                    writePlants();
+                    
+                    function writePlants() {
+                        var bookmark = db.collection("users").doc(user.uid).collection("bookmark");
+
+                        bookmark.add({
+                            code: "BBY01",
+                            dateAddedID: "fav1",
+                            dateAdded: "July 3, 2020",
+                            name: "Monstera"
+                        });
+                        bookmark.add({
+                            code: "BBY02",
+                            name: "Peace Lily",
+                            dateAdded: "April 14, 2021",
+                            dateAddedID: "fav2"
+                        });
+                        bookmark.add({
+                            code: "BBY03",
+                            name: "Money Tree",
+                            dateAdded: "August 10, 2021",
+                            dateAddedID: "fav3"
+                        });
+                    }
+                    writeBookmarks();
+
                     return false;
                 },
                 uiShown: function () {

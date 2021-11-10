@@ -201,33 +201,33 @@
         // }
         // displayBookmark();
 
-        function writeBookmarks() {
-            firebase.auth().onAuthStateChanged(user => {
-                if (user) {
-                    currentUser = db.collection("users").doc(user.uid);
-                    var bookmark = currentUser.collection("bookmark");
+        // function writeBookmarks() {
+        //     firebase.auth().onAuthStateChanged(user => {
+        //         if (user) {
+        //             currentUser = db.collection("users").doc(user.uid);
+        //             var bookmark = currentUser.collection("bookmark");
 
-                    bookmark.add({
-                        code: "BBY01",
-                        dateAddedID: "fav1",
-                        dateAdded: "July 3, 2020",
-                        name: "Monstera"
-                    });
-                    bookmark.add({
-                        code: "BBY02",
-                        name: "Peace Lily",
-                        dateAdded: "April 14, 2021",
-                        dateAddedID: "fav2"
-                    });
-                    bookmark.add({
-                        code: "BBY03",
-                        name: "Money Tree",
-                        dateAdded: "August 10, 2021",
-                        dateAddedID: "fav3"
-                    });
-                }
-            })
-        }
+        //             bookmark.add({
+        //                 code: "BBY01",
+        //                 dateAddedID: "fav1",
+        //                 dateAdded: "July 3, 2020",
+        //                 name: "Monstera"
+        //             });
+        //             bookmark.add({
+        //                 code: "BBY02",
+        //                 name: "Peace Lily",
+        //                 dateAdded: "April 14, 2021",
+        //                 dateAddedID: "fav2"
+        //             });
+        //             bookmark.add({
+        //                 code: "BBY03",
+        //                 name: "Money Tree",
+        //                 dateAdded: "August 10, 2021",
+        //                 dateAddedID: "fav3"
+        //             });
+        //         }
+        //     })
+        // }
 
         // writeBookmarks();
 
