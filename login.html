@@ -109,57 +109,6 @@
                     } else {
                         return true;
                     }
-
-                    function writePlants() {
-                      var plantsRef = db.collection("users").doc(user.uid).collection("plants");
-
-                        plantsRef.add({
-                             name: "Ficus Burgundy",
-                             nickName: "ficus",
-                             code: "BBY01",
-                             water: "once a week",
-                             adoption: "July 3, 2020"
-                         });
-                         plantsRef.add({
-                             name: "Ficus Tineke",
-                             code: "BBY02",
-                             water: "once a week",
-                             adoption: "April 14, 2021"
-                         });
-                         plantsRef.add({
-                             name: "ZZ Plant",
-                             nickName: "zz",
-                            code: "BBY03",
-                            water: "once every two weeks",
-                            adoption: "August 10, 2021"
-                        });
-                    }
-                    writePlants();
-
-                     function writeBookMarkPlants() {
-                         var favPlants = db.collection("users").doc(user.uid).collection("bookmark");
-
-                         favPlants.add({
-                             name: "Monstera",
-                             code: "BBY01",
-                             dateAdded: "July 3, 2020",
-                             dateAddedID: "fav1"
-                         });
-                         favPlants.add({
-                             name: "Peace Lily",
-                             code: "BBY02",
-                             dateAdded: "April 14, 2021",
-                             dateAddedID: "fav2"
-                         });
-                         favPlants.add({
-                             name: "Money Tree",
-                            code: "BBY03",
-                             dateAdded: "August 10, 2021",
-                             dateAddedID: "fav3"
-                        });
-                    }
-                    writeBookMarkPlants();
-
                     return false;
                 },
                 uiShown: function () {
