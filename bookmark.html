@@ -111,34 +111,34 @@
     </div>
 
     <div class="box">
-        <img src="images/plants/lavender.png" alt="lavender" class="img-fluid rounded-start" >
+        <img src="images/plants/monstera.jpg" alt="lavender" class="img-fluid rounded-start" >
         <div class="card-body">
-            <a href="plantinfo.html">
+            <a href="#">
                 <h5 class="card-title" id="BBY01">plant name</h5>
             </a>
-            <p class="card-text" id="bookmark1"><small class="text-muted">date added</small></p>
+            <p class="card-text" id="fav1"><small class="text-muted">date added</small></p>
         </div>
         <a href=""><i class="material-icons" id="favorite">favorite</i></a>
     </div>
 
     <div class="box">
-        <img src="images/plants/calathea.png" class="img-fluid rounded-start" alt="...">
+        <img src="images/plants/peacelily.png" class="img-fluid rounded-start" alt="...">
         <div class="card-body">
             <a href="#">
                 <h5 class="card-title" id="BBY02">plant name</h5>
             </a>
-            <p class="card-text" id="0414"><small class="text-muted">date added</small></p>
+            <p class="card-text" id="fav2"><small class="text-muted">date added</small></p> 
         </div>
         <a href=""><i class="material-icons" id="favorite">favorite</i></a>
     </div>
 
     <div class="box">
-        <img src="images/plants/birdnest.png" class="img-fluid rounded-start" alt="...">
+        <img src="images/plants/moneytree.jpg" class="img-fluid rounded-start" alt="...">
         <div class="card-body">
             <a href="#">
                 <h5 class="card-title" id="BBY03">plant name</h5>
             </a>
-            <p class="card-text" id="0810"><small class="text-muted">date added</small></p>
+            <p class="card-text" id="fav3"><small class="text-muted">date added</small></p>
         </div>
         <a href=""><i class="material-icons" id="favorite">favorite</i></a>
     </div>
@@ -259,7 +259,7 @@
                     .then(allplants => {
                         allplants.forEach(doc => {
                             var dateAdded = doc.data().dateAdded;
-                            var dateAddedID = doc.data().dateCode;
+                            var dateAddedID = doc.data().dateAddedID;
                             console.log(dateAddedID);
                             console.log(dateAdded);
                             document.getElementById(dateAddedID).innerText = dateAdded;
