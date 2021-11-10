@@ -111,7 +111,7 @@
     </div>
 
     <div class="box">
-        <img src="images/plants/monstera.jpg" alt="lavender" class="img-fluid rounded-start" >
+        <img src="images/plants/monstera.png" alt="monstera" class="img-fluid rounded-start" >
         <div class="card-body">
             <a href="#">
                 <h5 class="card-title" id="BBY01">plant name</h5>
@@ -127,7 +127,7 @@
             <a href="#">
                 <h5 class="card-title" id="BBY02">plant name</h5>
             </a>
-            <p class="card-text" id="fav2"><small class="text-muted">date added</small></p> 
+            <p class="card-text" id="fav2"><small class="text-muted">date added</small></p>
         </div>
         <a href=""><i class="material-icons" id="favorite">favorite</i></a>
     </div>
@@ -209,24 +209,21 @@
 
                     bookmark.add({
                         code: "BBY01",
-                        name: "Ficus Burgundy",
-                        nickName: "Ficus",
-                        water: "once a week",
-                        adoption: "July 3, 2020"
+                        dateAddedID: "fav1",
+                        dateAdded: "July 3, 2020",
+                        name: "Monstera"
                     });
                     bookmark.add({
                         code: "BBY02",
-                        name: "Ficus Tineke",
-                        nickName: "Ruby",
-                        water: "once a week",
-                        adoption: "April 14, 2021"
+                        name: "Peace Lily",
+                        dateAdded: "April 14, 2021",
+                        dateAddedID: "fav2"
                     });
                     bookmark.add({
                         code: "BBY03",
-                        name: "ZZ Plant",
-                        nickName: "ZZ",
-                        water: "once every two weeks",
-                        adoption: "August 10, 2021"
+                        name: "Money Tree",
+                        dateAdded: "August 10, 2021",
+                        dateAddedID: "fav3"
                     });
                 }
             })
@@ -253,18 +250,15 @@
         
         function displayBookmarkDate() {
             firebase.auth().onAuthStateChanged(user => {
-                if (user){
-                var currentUser = db.collection("users").doc(user.uid);
-                currentUser.collection("bookmark").get()
-                    .then(allplants => {
-                        allplants.forEach(doc => {
-                            var dateAdded = doc.data().dateAdded;
-                            var dateAddedID = doc.data().dateAddedID;
-                            console.log(dateAddedID);
-                            console.log(dateAdded);
-                            document.getElementById(dateAddedID).innerText = dateAdded;
+                if (user) {
+                    db.collection("users").doc(user.uid).collection("bookmark").get()
+                        .then(allbookmark => {
+                            allbookmark.forEach(doc => {
+                                var dateAdded = doc.data().dateAdded;
+                                var dateAddedID = doc.data().dateAddedID;
+                                document.getElementById(dateAddedID).innerText = dateAdded;
+                            })
                         })
-                    })
                 }
             })
         }
