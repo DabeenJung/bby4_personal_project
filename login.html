@@ -111,34 +111,7 @@
                         return true;
                     }
 
-                    function writePlants() {
-                        var plantsRef = db.collection("users").doc(user.uid).collection("plants");
-
-                        plantsRef.add({
-                            name: "Ficus Burgundy",
-                            nickName: "ficus",
-                            code: "BBY01",
-                            water: "once a week",
-                            adoption: "July 3, 2020"
-                        });
-                        plantsRef.add({
-                            name: "Ficus Tineke",
-                            nickName: "Ruby",
-                            code: "BBY02",
-                            water: "once a week",
-                            adoption: "April 14, 2021"
-                        });
-                        plantsRef.add({
-                            name: "ZZ Plant",
-                            nickName: "zz",
-                            code: "BBY03",
-                            water: "once every two weeks",
-                            adoption: "August 10, 2021"
-                        });
-                    }
-                    writePlants();
-                    
-                    function writePlants() {
+                    function writeBookmarks() {
                         var bookmark = db.collection("users").doc(user.uid).collection("bookmark");
 
                         bookmark.add({
@@ -161,6 +134,48 @@
                         });
                     }
                     writeBookmarks();
+
+                    function writePlants() {
+                        var plants = db.collection("users").doc(user.uid).collection("plants");
+
+                        plants.add({
+                            name: "Ficus Burgundy",
+                            nickname: "ficus",
+                            code_nickname: "BBY01",
+                            water: "once a week",
+                            adoption: "July 3, 2020",
+                            code_name: "one",
+                            code_adopt: "adopt1"
+                        });
+                        plants.add({
+                            name: "Ficus Tineke",
+                            code_name: "two",
+                            nickname: "Ruby",
+                            code_nickname: "BBY02",
+                            water: "once a week",
+                            adoption: "April 14, 2021",
+                            code_adopt: "adopt2"
+                        });
+                        plants.add({
+                            name: "ZZ Plant",
+                            code_name: "three",
+                            nickname: "zz",
+                            code_nickname: "BBY03",
+                            water: "once every two weeks",
+                            adoption: "August 10, 2021",
+                            code_adopt: "adopt3"
+                        });
+                        plants.add({
+                            name: "Lavender",
+                            code_name: "four",
+                            nickname: "Lalala",
+                            code_nickname: "BBY04",
+                            water: "once every two weeks",
+                            adoption: "May 24, 2021",
+                            code_adopt: "adopt4"
+                        });
+                    }
+                    writePlants();
 
                     return false;
                 },
