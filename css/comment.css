@@ -1,0 +1,48 @@
+.navbar-brand {
+    margin: auto;
+}
+#backbutton {
+    color: black;
+}
+#logo {
+    margin-left: 34%;
+}
+.form-floating {
+    display: inline-block;
+    width: 80%;
+}
+#account {
+    font-size: 40px;
+    position: relative;
+    top: 13px;
+    left: 10px;
+}
+#send {
+    font-size: 30px;
+    position: relative;
+    top: 8px;
+    left: 18px;
+    color: rgb(48, 148, 48);
+}
+#commentArea {
+    height: 40px;
+    width: 80%;
+    position: relative;
+    left: 13px;
+    border-radius: 1em;
+    border: 1.5px solid rgb(117, 103, 103);
+    padding: 15px;
+}
+#comments {
+    display: inline-block;
+    margin-left: 5px;
+    padding: 5px;
+    border: 1px solid grey;
+    border-radius: 1em;
+}
+#comments p {
+    margin: 0;
+}
+#commentBox {
+    margin: 20px;
+}

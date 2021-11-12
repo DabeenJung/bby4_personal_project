@@ -3,86 +3,29 @@
 
 <head>
   <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- CSS -->
+  <link rel="stylesheet" href="../css/plants.css">
   <!-- Google Icons (Material Design)-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- Firebase 8 CDNs-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+      </script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
 
   <!-- Link to the api keys for your firebase project -->
   <script src="./scripts/firebaseAPI.js"></script>
-
-  <style>
-    #logo {
-      margin-left: 35%;
-    }
-
-    a {
-      color: rgba(0, 0, 0, 0.9);
-    }
-
-    .input-group {
-      padding: 40px 50px 20px 50px;
-    }
-
-    .form-control:focus {
-      box-shadow: none;
-    }
-
-    .card-group {
-      margin: 20px 50px;
-    }
-
-    .card-group .row {
-      justify-content: space-evenly;
-      gap: 0.5em;
-    }
-
-    .card {
-      border: none;
-      max-width: 45%;
-      padding: 10px 0;
-      width: 18rem;
-    }
-
-    .card-body {
-      text-decoration: none;
-      width: 390px;
-      margin: auto;
-    }
-
-    .card-title {
-      display: inline;
-    }
-
-    .card-text {
-      display: block;
-    }
-
-    .card-img-top {
-      margin: 1% auto;
-    }
-
-    .navbar-brand {
-      margin: auto;
-    }
-
-    #lavender {
-      text-decoration: none;
-    }
-
-    #lavender:hover {
-      color: #198754;
-    }
-  </style>
   <title>True Leaf</title>
 </head>
 

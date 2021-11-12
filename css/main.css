@@ -1,0 +1,36 @@
+#loginandsignup {
+    padding: 0;
+  }
+
+  .cardBody {
+    padding: 0 16px 16px;
+    width: 390px;
+    margin: auto;
+
+  }
+
+  #logo {
+    margin-left: 35%;
+  }
+
+  .navbar-brand {
+    margin: auto;
+  }
+
+  .material-icons {
+    color: black;
+  }
+
+  #backbutton {
+    color: black;
+  }
+
+  .plantImage {
+    width: 350px;
+    display: block;
+    margin: 0 auto 10px;
+  }
+
+  .cards {
+    margin: 10px auto;
+  }

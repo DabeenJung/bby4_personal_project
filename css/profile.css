@@ -1,0 +1,65 @@
+#logo {
+    margin-left: 35%;
+}
+
+a {
+    color: rgba(0, 0, 0, .9);
+}
+
+.user-profile {
+    display: grid;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.avatar {
+    display: grid;
+    justify-content: center;
+}
+
+.avatar img {
+    border-radius: 100%;
+}
+
+.info {
+    text-align: center;
+}
+
+.info .desc {
+    display: block;
+}
+
+.card-group {
+    margin: 0 50px;
+    justify-content: space-around;
+}
+
+.card-group .row {
+    justify-content: space-evenly;
+    gap: 0.5em;
+}
+
+.card {
+    border: none;
+    padding: 10px 0;
+    width: 18rem;
+}
+
+.card-img-top {
+    margin: 1% auto;
+
+}
+
+.navbar-brand {
+    margin: auto;
+}
+
+.card-title {
+    display: inline;
+}
+.card-text1 {
+    display: block;
+}
+.card-text {
+    display: block;
+}

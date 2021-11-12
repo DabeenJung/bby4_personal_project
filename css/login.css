@@ -1,0 +1,20 @@
+body {
+    background-image: url('https://i1.wp.com/www.worldtopupdates.com/wp-content/uploads/2017/08/image-result-for-peace-lily.jpeg?resize=1060%2C1378');
+    background-size: 100%;
+}
+
+#backbutton {
+    color: black;
+}
+
+#logo {
+    margin-right: 45%;
+}
+
+#firebaseui-auth-container {
+    margin-top: 20%;
+}
+
+.container-fluid a {
+    margin: auto;
+}

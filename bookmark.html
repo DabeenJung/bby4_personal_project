@@ -10,7 +10,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
-
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/bookmark.css">
     <!-- Google Icons (Material Design)-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -18,7 +19,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
@@ -26,76 +27,7 @@
 
     <!-- Link to the api keys for your firebase project -->
     <script src="./scripts/firebaseAPI.js"></script>
-
-    <style>
-        #logo {
-            margin-left: 35%;
-            margin-right: auto;
-        }
-
-        a {
-            color: rgba(0, 0, 0, .9);
-        }
-
-        .navbar-brand {
-            margin: auto;
-        }
-
-        .card-body {
-            display: inline-block;
-            padding: 0;
-            margin-top: 10px;
-        }
-
-        .box img {
-            width: 100px;
-            margin: auto;
-        }
-
-        .card-title {
-            display: inline;
-        }
-
-        #favorite {
-            font-size: 20px;
-            grid-column: 3 / span 1;
-            
-        }
-        .box a {
-            margin: 12px auto;
-        }
-
-        #lavendername {
-            text-decoration: none;
-        }
-
-        #lavendername:hover {
-            color: #198754;
-        }
-
-        .box {
-            margin: 30px 0;
-            display: grid;
-            grid-template-columns: 33% 45% 22%;
-        }
-        .img-fluid.rounded-start {
-            grid-column: 1 / span 1;
-        }
-        #name {
-            font-size: 28px;
-            margin: 20px;
-            background-color: rgb(228, 250, 215);
-            border-radius: 1em;
-        }
-        #name p {
-            text-align: center;
-        }
-        #name-goes-here {
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-    </style>
-
-    <title>Bookmark</title>
+    <title>Ture Leaf</title>
 </head>
 
 <body>
@@ -111,7 +43,7 @@
     </div>
 
     <div class="box">
-        <img src="images/plants/monstera.jpg" alt="monstera" class="img-fluid rounded-start" >
+        <img src="images/plants/monstera.jpg" alt="monstera" class="img-fluid rounded-start">
         <div class="card-body">
             <a href="#">
                 <h5 class="card-title" id="BBY01">plant name</h5>
@@ -152,8 +84,8 @@
             <a class="navbar-brand" href="plants.html">
                 <i class="material-icons">search</i>
             </a>
-            <a class = "navbar-brand" href = "add.html">
-                <i class = "material-icons"> add_circle_outline</i>
+            <a class="navbar-brand" href="add.html">
+                <i class="material-icons"> add_circle_outline</i>
             </a>
             <a class="navbar-brand" href="bookmark.html">
                 <i class="material-icons" style="color: #198754">favorite_border</i>
@@ -247,7 +179,7 @@
         }
         displayBookmark();
 
-        
+
         function displayBookmarkDate() {
             firebase.auth().onAuthStateChanged(user => {
                 if (user) {
@@ -263,7 +195,7 @@
             })
         }
         displayBookmarkDate();
-       
+
     </script>
 </body>
 

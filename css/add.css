@@ -1,0 +1,15 @@
+.navbar-brand {
+    margin: auto;
+}
+
+a {
+    color: rgba(0, 0, 0, .9);
+}
+
+#title {
+    margin: 20px 35% ;
+}
+
+#logo {
+    margin-left: 35%;
+}

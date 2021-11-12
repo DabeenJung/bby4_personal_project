@@ -1,0 +1,61 @@
+#logo {
+    margin-left: 35%;
+  }
+
+  a {
+    color: rgba(0, 0, 0, 0.9);
+  }
+
+  .input-group {
+    padding: 40px 50px 20px 50px;
+  }
+
+  .form-control:focus {
+    box-shadow: none;
+  }
+
+  .card-group {
+    margin: 20px 50px;
+  }
+
+  .card-group .row {
+    justify-content: space-evenly;
+    gap: 0.5em;
+  }
+
+  .card {
+    border: none;
+    max-width: 45%;
+    padding: 10px 0;
+    width: 18rem;
+  }
+
+  .card-body {
+    text-decoration: none;
+    width: 390px;
+    margin: auto;
+  }
+
+  .card-title {
+    display: inline;
+  }
+
+  .card-text {
+    display: block;
+  }
+
+  .card-img-top {
+    margin: 1% auto;
+  }
+
+  .navbar-brand {
+    margin: auto;
+  }
+
+  #lavender {
+    text-decoration: none;
+  }
+
+  #lavender:hover {
+    color: #198754;
+  }
