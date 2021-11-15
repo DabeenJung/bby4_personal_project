@@ -26,7 +26,7 @@
 }
 #commentArea {
     height: 40px;
-    width: 80%;
+    width: 76%;
     position: relative;
     left: 13px;
     border-radius: 1em;
@@ -45,4 +45,11 @@
 }
 #commentBox {
     margin: 20px;
+}
+#comment {
+    margin: 4% 3%;
+}
+.divbar.fixed-bottom {
+    bottom: 100px;
+    margin-left: 3%;
 }
