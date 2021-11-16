@@ -56,6 +56,7 @@
             if (user) {
                 var iconID = document.getElementById("fav");
                 console.log(iconID);
+
                 if(iconID.className.match("fa fa-heart-o")) {
                   userBookmark = db.collection("users").doc(user.uid).collection("bookmark");
 
@@ -70,7 +71,7 @@
                   console.log(Year);
                   date = "<b>" + Day + "/" + Month + "/" + Year + "</b>"
 
-                  userBookmark.add({
+                  userBookmark.doc(commonName).set({
                       name: commonName,
                       dateAdded: date,
                       plantCode: code
@@ -78,9 +79,12 @@
                   alert("Plant added to bookmark!");
               }
               else{
-                db.collection("users").doc(user.uid).collection("bookmark").doc(bookmark.getID()).delete().then(() => {
-                  console.log("bookmark deleted");
+                db.collection("users").doc(user.uid).collection("bookmark").doc(commonName).delete().then(() => {
+                  console.log("Document successfully deleted!");
+                }).catch((error) => {
+                    console.error("Error removing document: ", error);
                 });
+            
               };
               
             }
