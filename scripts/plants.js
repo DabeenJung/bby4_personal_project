@@ -13,6 +13,12 @@ function displayPlants() {
             let photo = document.createElement("img");
             photo.setAttribute("src", "../images/plants/" + code + ".png");
             cardCaption.setAttribute("class", "card-body");
+            let links = document.createElement("a");
+            links.setAttribute("href", "./plantinfo.html");
+            links.setAttribute("id", common_name);
+            links.setAttribute("class", "linkstoinfo");
+            // should pass an id of the element
+            links.setAttribute("onclick", "Test(this.id)");
             let cardTitle = document.createElement("h5");
             cardTitle.setAttribute("class", "card-title");
             cardTitle.innerHTML = "<strong>" + common_name + "</strong>";
@@ -22,10 +28,21 @@ function displayPlants() {
             plantCards.appendChild(card);
             card.appendChild(photo);
             card.appendChild(cardCaption);
-            cardCaption.appendChild(cardTitle);
+            cardCaption.appendChild(links);
+            links.appendChild(cardTitle);
             cardCaption.appendChild(cardText);
         })
     })
 }
 
 displayPlants();
+
+function Test(id) {
+    localStorage.setItem('common_name', id);
+}
+function test2() {
+    exa = this.id;
+    localStorage.setItem("common_name", exa);
+}
+
+

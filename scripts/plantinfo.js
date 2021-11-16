@@ -8,13 +8,20 @@
     var humidity;
     var temperature;
     var commonName;
+    var photo;
+    var imageName;
+    var commonID = localStorage.getItem("common_name");
 
     function getPlantData() {
-      var query = plantDB.where("common_name", "==", "Lavender")
+      var query = plantDB.where("common_name", "==", commonID)
         .get()
         .then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
             // doc.data() is never undefined for query doc snapshots
+            imageName = commonID.replaceAll(" ", "_").toLowerCase();
+            photo = document.createElement("img");
+            photo.setAttribute("src", "./images/plants/" + imageName + ".png");
+            photo.setAttribute("id", "picture");
             species = doc.data().species;
             description = doc.data().description;
             light = doc.data().sunlight;
@@ -35,7 +42,10 @@
     getPlantData();
 
     function loadPlantData(){
-         document.getElementById("description").innerHTML = description;
+         document.getElementById("plant-image").appendChild(photo);
+         document.getElementById("plant-name").innerHTML = commonID;
+         document.getElementById("plant-specie").innerHTML = species;
+         document.getElementById("description").innerHTML = commonID + description;
          document.getElementById("water-info").innerHTML = water;
          document.getElementById("light-info").innerHTML = light;
          document.getElementById("fertilizer-info").innerHTML = fertilizer;

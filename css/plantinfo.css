@@ -8,7 +8,7 @@ body {
 }
 
 #logo {
-  margin-left: 21%;
+  margin-left: 10%;
 }
 
 #wrapper {
@@ -29,6 +29,13 @@ body {
   grid-row: 2;
   grid-column: 1/4;
   text-align: center;
+}
+
+#plant-specie {
+  grid-row: 3;
+  grid-column: 1/4;
+  text-align: center;
+  font-style: italic;
 }
 
 .img {
@@ -63,6 +70,14 @@ body {
 
 .container-fluid a {
   margin: auto;
+}
+
+#picture {
+  height: 500px;
+}
+
+#plant-name {
+  font-weight: bold;
 }
 
 

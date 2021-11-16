@@ -40,7 +40,7 @@ function displayBookmark() {
 
                     let cardText = document.createElement("h7");
                     cardText.setAttribute("class", "card-text");
-                    cardText.innerHTML = "<em>" + dateAdded + "</em>";
+                    cardText.innerHTML = dateAdded;
 
                     let cardText1 = document.createElement("div");
                     cardText1.setAttribute("class", "material-icons");

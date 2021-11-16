@@ -29,19 +29,19 @@ var uiConfig = {
                 bookmark.add({
                     code: "BBY01",
                     dateAddedID: "fav1",
-                    dateAdded: "July 3, 2020",
+                    dateAdded: "03/07/2020",
                     name: "Monstera"
                 });
                 bookmark.add({
                     code: "BBY02",
                     name: "Peace Lily",
-                    dateAdded: "April 14, 2021",
+                    dateAdded: "14/08/2021",
                     dateAddedID: "fav2"
                 });
                 bookmark.add({
                     code: "BBY03",
                     name: "Money Tree",
-                    dateAdded: "August 10, 2021",
+                    dateAdded: "10/08/2021",
                     dateAddedID: "fav3"
                 });
             }

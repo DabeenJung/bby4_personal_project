@@ -59,3 +59,11 @@
   #lavender:hover {
     color: #198754;
   }
+
+  .linkstoinfo {
+    text-decoration: none;
+  }
+  
+  .linkstoinfo:hover {
+    color: #198754;
+  }
