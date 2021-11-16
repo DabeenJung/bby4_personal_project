@@ -22,7 +22,7 @@ function displayBookmark() {
         if (user) {
             db.collection("users").doc(user.uid).collection("bookmark").get().then(allPlants => {
                 allPlants.forEach(doc => {
-                    let species = doc.data().name;
+                    let species = doc.data().name.replaceAll(" ", "_").toLowerCase();;
                     let dateAdded = doc.data().dateAdded; 
 
                     let card = document.createElement("div");
