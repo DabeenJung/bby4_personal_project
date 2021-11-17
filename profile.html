@@ -40,16 +40,23 @@
     <div class="user-profile">
         <div class="avatar">
             <img alt="user display picture" src="https://i.pravatar.cc/150/">
+            <br>
         </div>
         <div class="info">
-            <h5 class="title" id="name-goes-here">
-                <strong>ThePlantKiller</strong>
-            </h5>
-            <h7 class="desc" id="address">SOMEWHERE</h7>
-            <h7 class="desc" id="numberOfPlants">4 Plants</h7>
+            <fieldset id="personalInfo" disabled>
+                <input type="text" id="name-goes-here" class="inputs" placeholder="Enter you name">
+                <br>
+                <input type="text" id="location" class="inputs" value="somewhere" placeholder="Enter your location">
+            </fieldset>
+            <h7 class="desc"><span id="numberOfPlants">0</span> Plants</h7>
         </div>
     </div>
-
+    <div id="buttons">
+        <button type="button" id="editbutton" class="btn btn-success" onclick="editUserInfo()">Edit</button>
+        <button type="button" id="savebutton" class="btn btn-success" onclick="saveUserInfo()">Save</button>
+        <button type="button" id="cancelbutton" class="btn btn-success" onclick="cancelUserInfo()">Cancel</button>
+    </div>
+    <br>
     <div class="card-group">
         <div id="plant-cards" class="row">
 

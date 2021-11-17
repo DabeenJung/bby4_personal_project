@@ -9,7 +9,7 @@ a {
 .user-profile {
     display: grid;
     justify-content: center;
-    padding: 20px 0;
+    padding: 20px 0 5px;
 }
 
 .avatar {
@@ -62,4 +62,49 @@ a {
 }
 .card-text {
     display: block;
+}
+#name-goes-here {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    width: 220px;
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 0.5em;
+    margin-bottom: 5px;
+}
+    
+#location {
+    text-align: center;
+    width: 220px;
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 0.5em;
+}
+#buttons {
+    display: grid;
+    grid-template-columns: 65% 10% 10% 2% 10% 3%;
+}
+#editbutton {
+    padding: 3px 0;
+    width: 55px;
+    font-size: 14px;
+    grid-column: 2 / span 1;
+    justify-self: end;
+}
+#savebutton {
+    padding: 3px 0;
+    font-size: 14px;
+    width: 55px;
+    visibility: hidden;
+    grid-column: 5 / span 1;
+}
+#cancelbutton {
+    padding: 3px 0;
+    width: 55px;
+    font-size: 14px;
+    visibility: hidden;
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 1;
+    justify-self: end;
 }
