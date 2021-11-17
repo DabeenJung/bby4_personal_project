@@ -1,5 +1,6 @@
 
     const plantDB = db.collection("plants");
+    var code; 
     var species;
     var description;
     var light;
@@ -10,15 +11,21 @@
     var commonName;
     var photo;
     var imageName;
-    var commonID = localStorage.getItem("common_name");
 
-    function getPlantData() {
-      var query = plantDB.where("common_name", "==", commonID)
+    async function getPlantCode() {
+      // create a URL object
+      let params = new URL(window.location.href);
+      code = params.searchParams.get("code"); 
+      return code;  
+ }
+
+    function getPlantData(plantCode) {
+      var query = plantDB.where("code", "==", plantCode)
         .get()
         .then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
             // doc.data() is never undefined for query doc snapshots
-            imageName = commonID.replaceAll(" ", "_").toLowerCase();
+            imageName = code.toLowerCase();
             photo = document.createElement("img");
             photo.setAttribute("src", "./images/plants/" + imageName + ".png");
             photo.setAttribute("id", "picture");
@@ -39,13 +46,11 @@
 
     }
 
-    getPlantData();
-
     function loadPlantData(){
          document.getElementById("plant-image").appendChild(photo);
-         document.getElementById("plant-name").innerHTML = commonID;
+         document.getElementById("plant-name").innerHTML = commonName;
          document.getElementById("plant-specie").innerHTML = species;
-         document.getElementById("description").innerHTML = commonID + description;
+         document.getElementById("description").innerHTML = commonName + description;
          document.getElementById("water-info").innerHTML = water;
          document.getElementById("light-info").innerHTML = light;
          document.getElementById("fertilizer-info").innerHTML = fertilizer;
@@ -100,4 +105,6 @@
             }
         });
     }
+
+    getPlantCode().then(getPlantData); 
   

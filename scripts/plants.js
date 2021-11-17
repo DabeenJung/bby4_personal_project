@@ -20,11 +20,11 @@ function addCards(doc) {
       photo.setAttribute("src", "../images/plants/" + code + ".png");
       cardCaption.setAttribute("class", "card-body");
       let links = document.createElement("a");
-      links.setAttribute("href", "./plantinfo.html");
+      links.setAttribute("href", "plantinfo.html?code=" + doc.data().code);
       links.setAttribute("id", common_name);
       links.setAttribute("class", "linkstoinfo");
       // should pass an id of the element
-      links.setAttribute("onclick", "Test(this.id)");
+      //links.setAttribute("onclick", "Test(this.id)");
       let cardTitle = document.createElement("h5");
       cardTitle.setAttribute("class", "card-title");
       cardTitle.innerHTML = "<strong>" + common_name + "</strong>";
