@@ -89,7 +89,8 @@ a {
     padding: 3px 0;
     width: 55px;
     font-size: 14px;
-    grid-column: 2 / span 1;
+    grid-column: 5 / span 1;
+    grid-row: 1 / span 1;
     justify-self: end;
 }
 #savebutton {
@@ -98,6 +99,7 @@ a {
     width: 55px;
     visibility: hidden;
     grid-column: 5 / span 1;
+    grid-row: 1 / span 1;
 }
 #cancelbutton {
     padding: 3px 0;
