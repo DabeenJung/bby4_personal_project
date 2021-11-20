@@ -113,3 +113,17 @@ function checklogin() {
         window.location.href = "login.html"
     }
 }
+
+function prompttologin() {
+    user1 = firebase.auth().currentUser;
+    if (user1) {
+        window.location.href = "profile.html";
+    } else {
+        var txt = confirm("Do you want to go to login page?");
+        if (txt == true) {
+            location.href = "login.html";
+        } else {
+            location.href = "login.html";
+        }
+    }
+}
