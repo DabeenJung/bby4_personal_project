@@ -16,14 +16,16 @@ function insertName() {
 insertName();
 
 const plantCards = document.getElementById("plant-cards");
+var species;
 function displayBookmark() {
 
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
             db.collection("users").doc(user.uid).collection("bookmark").get().then(allPlants => {
                 allPlants.forEach(doc => {
-                    let species = doc.data().name.replaceAll(" ", "_").toLowerCase();;
+                    species = doc.data().name.replaceAll(" ", "_").toLowerCase();;
                     let dateAdded = doc.data().dateAdded; 
+                    let code = doc.data().name.replaceAll(" ", "_").toUpperCase();
 
                     let card = document.createElement("div");
                     card.setAttribute("class", "box img-fluid rounded-start");
@@ -33,6 +35,10 @@ function displayBookmark() {
 
                     let cardCaption = document.createElement("div");
                     cardCaption.setAttribute("class", "card-body");
+                    let links = document.createElement("a");
+                    links.setAttribute("href", "plantinfo.html?code=" + code);
+                    links.setAttribute("id", species);
+                    links.setAttribute("class", "linkstoinfo");
 
                     let cardTitle = document.createElement("h5");
                     cardTitle.setAttribute("class", "card-title");
@@ -42,14 +48,18 @@ function displayBookmark() {
                     cardText.setAttribute("class", "card-text");
                     cardText.innerHTML = dateAdded;
 
-                    let cardText1 = document.createElement("div");
-                    cardText1.setAttribute("class", "material-icons");
-                    cardText1.innerHTML = ("id", "favorite");
+                    let cardText1 = document.createElement("i");
+                    cardText1.setAttribute("class", "fa fa-heart");
+                    cardText1.setAttribute("type", "button");
+                    cardText1.setAttribute("onclick", "removeFav()");
+                    cardText1.setAttribute("id", "favorite");
 
                     plantCards.appendChild(card);
                     card.appendChild(photo);
                     card.appendChild(cardCaption);
                     cardCaption.appendChild(cardTitle);
+                    cardCaption.appendChild(links);
+                    links.appendChild(cardTitle);
                     cardCaption.appendChild(cardText);
                     card.appendChild(cardText1);
                 })
@@ -58,6 +68,19 @@ function displayBookmark() {
     })
 }
 displayBookmark();
+
+function removeFav() {
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            db.collection("users").doc(user.uid).collection("bookmark").doc(species).delete().then(() => {
+                console.log("Document successfully deleted!");
+                console.log(species);
+              }).catch((error) => {
+                  console.error("Error removing document: ", error);
+              });
+        }
+    })
+}
 
 /*
     function displayBookmark() {
