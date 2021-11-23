@@ -1,36 +1,75 @@
+body {
+  padding-bottom: 60px;
+}
+
 #loginandsignup {
-    padding: 0;
-  }
+  padding: 0;
+}
 
-  .cardBody {
-    padding: 0 16px 16px;
-    width: 390px;
-    margin: auto;
+#plant-cards {
+  display: grid;
+  justify-items: center;
+}
 
-  }
+.card {
+  width: 390px;
+}
 
-  #logo {
-    margin-left: 35%;
-  }
+.card-header {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
 
-  .navbar-brand {
-    margin: auto;
-  }
+.card-header .material-icons {
+  grid-column: 1;
+  color: black;
+  font-size: 30px;
+}
 
-  .material-icons {
-    color: black;
-  }
+.card-header .username {
+  grid-column: 2;
+}
 
-  #backbutton {
-    color: black;
-  }
+.row {
+  justify-content: space-evenly;
+  gap: 0.5em;
+}
 
-  .plantImage {
-    width: 350px;
-    display: block;
-    margin: 0 auto 10px;
-  }
+.cardBody {
+  padding: 0 16px 16px;
+  width: 390px;
+  margin: auto;
+}
 
-  .cards {
-    margin: 10px auto;
-  }
+#card-group {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+#logo {
+  margin-left: 35%;
+}
+
+.navbar-brand {
+  margin: auto;
+}
+
+
+
+#backbutton {
+  color: black;
+}
+
+.card-image {
+  width: 350px;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.username {
+  display: inline-block;
+}
+
+.cards {
+  margin: 10px auto;
+}

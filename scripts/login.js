@@ -3,6 +3,9 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
 var uiConfig = {
     callbacks: {
         signInSuccessWithAuthResult: function (authResult, redirectUrl) {
+            let currUser = firebase.auth().currentUser.email;
+            localStorage.setItem('current_user', currUser);
+            console.log("added user to local" + currUser);
             // User successfully signed in.
             // Return type determines whether we continue the redirect automatically
             // or whether we leave that to developer to handle.
@@ -10,13 +13,13 @@ var uiConfig = {
 
             if (authResult.additionalUserInfo.isNewUser) {
                 db.collection("users").doc(user.uid).set({
-                    name: user.displayName,
-                    email: user.email,
-                    location: ""
-                }).then(function () {
-                    console.log("New user aded to firestore");
-                    window.location.assign("main.html");
-                })
+                        name: user.displayName,
+                        email: user.email,
+                        location: ""
+                    }).then(function () {
+                        console.log("New user aded to firestore");
+                        window.location.assign("main.html");
+                    })
                     .catch(function (error) {
                         console.log("Error adding new user: " + error);
                     });
@@ -52,21 +55,25 @@ var uiConfig = {
             //     var plants = db.collection("users").doc(user.uid).collection("plants");
 
             //     plants.add({
+            //         code: "ficus_burgundy",
             //         common_name: "Ficus Burgundy",
             //         nickname: "ficus",
             //         adoption: "Adopted on 2020-07-03"
             //     });
             //     plants.add({
+            //         code: "ficus_tineke",
             //         common_name: "Ficus Tineke",
             //         nickname: "Ruby",
             //         adoption: "Adopted on 2021-08-14"
             //     });
             //     plants.add({
+            //         code: "zz_plant",
             //         common_name: "ZZ Plant",
             //         nickname: "zz",
             //         adoption: "Adopted on 2021-08-10"
             //     });
             //     plants.add({
+            //         code: "lavender",
             //         common_name: "Lavender",
             //         nickname: "Lalala",
             //         adoption: "Adopted on 2021-05-24"
@@ -104,6 +111,8 @@ var uiConfig = {
 ui.start('#firebaseui-auth-container', uiConfig);
 
 var user1 = firebase.auth().currentUser;
+
+
 function checklogin() {
     user1 = firebase.auth().currentUser;
     if (user1) {
