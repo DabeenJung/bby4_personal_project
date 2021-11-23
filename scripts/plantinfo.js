@@ -58,18 +58,33 @@ function loadPlantData() {
 }
 
 //toggle fav and unfav button
-$(".fa").click(function () {
-  $(this).toggleClass("fa-heart fa-heart-o");
-  console.log("changed color");
+//$(".fa").click(function () {
+//  $(this).toggleClass("fa-heart fa-heart-o");
+//  window.localStorage.setItem("fav" , b.className);
+//  console.log("changed color");
+//});
+
+$(document).ready(function() {
+  var state = document.getElementById("fav");
+  console.log(state);
+  if (window.localStorage.getItem("fav") != null) {
+    var pb = window.localStorage.getItem("fav");
+    console.log(pb);
+    if (pb == "fa fa-heart") {
+      state.className = "fa fa-heart";
+    }
+  }
 });
 
 var userBookmark
 var code
+var save
+var iconID
 
 function addToFav() {
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
-      var iconID = document.getElementById("fav");
+      iconID = document.getElementById("fav");
       console.log(iconID);
 
       if (iconID.className.match("fa fa-heart-o")) {
@@ -91,10 +106,13 @@ function addToFav() {
           dateAdded: date,
           plantCode: code
         })
+        iconID.className = "fa fa-heart";
         alert("Plant added to bookmark!");
       } else {
         db.collection("users").doc(user.uid).collection("bookmark").doc(commonName).delete().then(() => {
           console.log("Document successfully deleted!");
+          iconID.className = "fa fa-heart-o"
+          alert("Plant removed from bookmark");
         }).catch((error) => {
           console.error("Error removing document: ", error);
         });
