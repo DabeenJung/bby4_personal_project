@@ -26,9 +26,10 @@ function displayBookmark() {
         if (user) {
             db.collection("users").doc(user.uid).collection("bookmark").get().then(allPlants => {
                 allPlants.forEach(doc => {
-                    species = doc.data().name.replaceAll(" ", "_").toLowerCase();;
+                    this.species = doc.data().name.replaceAll(" ", "_").toLowerCase();;
                     let dateAdded = doc.data().dateAdded;
                     code = doc.data().name.replaceAll(" ", "_").toUpperCase();
+                    remove = doc.data().name;
 
                     let card = document.createElement("div");
                     card.setAttribute("class", "box img-fluid rounded-start");
@@ -55,8 +56,8 @@ function displayBookmark() {
                     let cardText1 = document.createElement("i");
                     cardText1.setAttribute("class", "fa fa-heart");
                     cardText1.setAttribute("type", "button");
-                    cardText1.setAttribute("onclick", "removeFav()");
-                    cardText1.setAttribute("id", code);
+                    cardText1.setAttribute("onclick", "removeFav(this.id)");
+                    cardText1.setAttribute("id", remove);
 
                     plantCards.appendChild(card);
                     card.appendChild(photo);
@@ -73,12 +74,13 @@ function displayBookmark() {
 }
 displayBookmark();
 
-function removeFav() {
+function removeFav(clicked_id) {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
-            db.collection("users").doc(user.uid).collection("bookmark").doc(remove).delete().then(() => {
+
+            db.collection("users").doc(user.uid).collection("bookmark").doc(clicked_id).delete().then(() => {
                 console.log("Document successfully deleted!");
-                console.log(remove);
+                console.log(clicked_id);
                 alert("Plant removed from bookmark");
             }).catch((error) => {
                 console.error("Error removing document: ", error);
