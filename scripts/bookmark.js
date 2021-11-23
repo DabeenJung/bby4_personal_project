@@ -17,6 +17,7 @@ insertName();
 
 const plantCards = document.getElementById("plant-cards");
 var species;
+
 function displayBookmark() {
 
     firebase.auth().onAuthStateChanged(user => {
@@ -24,12 +25,12 @@ function displayBookmark() {
             db.collection("users").doc(user.uid).collection("bookmark").get().then(allPlants => {
                 allPlants.forEach(doc => {
                     species = doc.data().name.replaceAll(" ", "_").toLowerCase();;
-                    let dateAdded = doc.data().dateAdded; 
+                    let dateAdded = doc.data().dateAdded;
                     let code = doc.data().name.replaceAll(" ", "_").toUpperCase();
 
                     let card = document.createElement("div");
                     card.setAttribute("class", "box img-fluid rounded-start");
-                    
+
                     let photo = document.createElement("img");
                     photo.setAttribute("src", "./images/plants/" + species + ".png");
 
@@ -71,73 +72,83 @@ displayBookmark();
 
 function removeFav() {
     firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-            db.collection("users").doc(user.uid).collection("bookmark").doc(species).delete().then(() => {
-                console.log("Document successfully deleted!");
-                console.log(species);
-              }).catch((error) => {
-                  console.error("Error removing document: ", error);
-              });
+            if (user) {
+                db.collection("users").doc(user.uid).collection("bookmark").get().then(allPlants => {
+                    allPlants.match(doc => {
+                            let remove = doc.data().name;
+                            let bookmark = db.collection("users").doc(user.uid).collection("bookmark");
+                            bookmark.doc(remove).delete().then(() => {
+                                console.log("Document successfully deleted!");
+                                console.log(species);
+                            }).catch((error) => {
+                                    console.error("Error removing document: ", error);
+                                })
+                            });
+                    })
+            }
+    });
+}
+
+
+
+
+    /*
+        function displayBookmark() {
+            firebase.auth().onAuthStateChanged(user => {
+                if (user) {
+                    db.collection("users").doc(user.uid).collection("bookmark").get()
+                        .then(allbookmark => {
+                            allbookmark.forEach(doc => {
+                                var plantName = doc.data().name;
+                                var plantId = doc.data().code;
+                                document.getElementById(plantId).innerText = plantName;
+                            })
+                        })
+                }
+            })
         }
-    })
-}
+        displayBookmark();
 
-/*
-    function displayBookmark() {
-        firebase.auth().onAuthStateChanged(user => {
-            if (user) {
-                db.collection("users").doc(user.uid).collection("bookmark").get()
-                    .then(allbookmark => {
-                        allbookmark.forEach(doc => {
-                            var plantName = doc.data().name;
-                            var plantId = doc.data().code;
-                            document.getElementById(plantId).innerText = plantName;
+
+        function displayBookmarkDate() {
+            firebase.auth().onAuthStateChanged(user => {
+                if (user) {
+                    db.collection("users").doc(user.uid).collection("bookmark").get()
+                        .then(allbookmark => {
+                            allbookmark.forEach(doc => {
+                                var dateAdded = doc.data().dateAdded;
+                                var dateAddedID = doc.data().dateAddedID;
+                                document.getElementById(dateAddedID).innerText = dateAdded;
+                            })
                         })
-                    })
-            }
-        })
-    }
-    displayBookmark();
+                }
+            })
+        }
+        displayBookmarkDate();
+    */
 
+    var user1 = firebase.auth().currentUser;
 
-    function displayBookmarkDate() {
-        firebase.auth().onAuthStateChanged(user => {
-            if (user) {
-                db.collection("users").doc(user.uid).collection("bookmark").get()
-                    .then(allbookmark => {
-                        allbookmark.forEach(doc => {
-                            var dateAdded = doc.data().dateAdded;
-                            var dateAddedID = doc.data().dateAddedID;
-                            document.getElementById(dateAddedID).innerText = dateAdded;
-                        })
-                    })
-            }
-        })
-    }
-    displayBookmarkDate();
-*/
-
-var user1 = firebase.auth().currentUser;
-function checklogin() {
-    user1 = firebase.auth().currentUser;
-    if (user1) {
-        window.location.href = "add.html";
-    } else {
-        alert("You should log in first");
-        window.location.href = "bookmark.html"
-    }
-}
-
-function prompttologin() {
-    user1 = firebase.auth().currentUser;
-    if (user1) {
-        window.location.href = "profile.html";
-    } else {
-        var txt = confirm("Do you want to go to login page?");
-        if (txt == true) {
-            location.href = "login.html";
+    function checklogin() {
+        user1 = firebase.auth().currentUser;
+        if (user1) {
+            window.location.href = "add.html";
         } else {
-            location.href = "bookmark.html";
+            alert("You should log in first");
+            window.location.href = "bookmark.html"
         }
     }
-}
+
+    function prompttologin() {
+        user1 = firebase.auth().currentUser;
+        if (user1) {
+            window.location.href = "profile.html";
+        } else {
+            var txt = confirm("Do you want to go to login page?");
+            if (txt == true) {
+                location.href = "login.html";
+            } else {
+                location.href = "bookmark.html";
+            }
+        }
+    }

@@ -1,4 +1,3 @@
-
 const plantDB = db.collection("plants");
 var code;
 var species;
@@ -66,6 +65,7 @@ $(".fa").click(function () {
 
 var userBookmark
 var code
+
 function addToFav() {
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
@@ -92,43 +92,17 @@ function addToFav() {
           plantCode: code
         })
         alert("Plant added to bookmark!");
-      }
-      else {
+      } else {
         db.collection("users").doc(user.uid).collection("bookmark").doc(commonName).delete().then(() => {
           console.log("Document successfully deleted!");
         }).catch((error) => {
           console.error("Error removing document: ", error);
         });
-
       };
-
+    } else {
+      checklogin();
     }
   });
 }
 
 getPlantCode().then(getPlantData);
-
-var user1 = firebase.auth().currentUser;
-function checklogin() {
-  user1 = firebase.auth().currentUser;
-  if (user1) {
-    window.location.href = "add.html";
-  } else {
-    alert("You should log in first");
-    window.location.href = "plantinfo.html"
-  }
-}
-
-function prompttologin() {
-  user1 = firebase.auth().currentUser;
-  if (user1) {
-      window.location.href = "profile.html";
-  } else {
-      var txt = confirm("Do you want to go to login page?");
-      if (txt == true) {
-          location.href = "login.html";
-      } else {
-          location.href = "plantinfo.html";
-      }
-  }
-}
