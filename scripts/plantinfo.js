@@ -66,12 +66,14 @@ function loadPlantData() {
 
 $(document).ready(function() {
   var state = document.getElementById("fav");
-  console.log(state);
+  console.log(state.className);
   if (window.localStorage.getItem("fav") != null) {
-    var pb = window.localStorage.getItem("fav");
+    var pb = window.localStorage.getItem("className");
     console.log(pb);
     if (pb == "fa fa-heart") {
       state.className = "fa fa-heart";
+    } else {
+      state.className = "fa fa-heart-o";
     }
   }
 });
@@ -107,11 +109,15 @@ function addToFav() {
           plantCode: code
         })
         iconID.className = "fa fa-heart";
+        localStorage.setItem("className", "fa fa-heart");
+        localStorage.getItem("className");
         alert("Plant added to bookmark!");
       } else {
         db.collection("users").doc(user.uid).collection("bookmark").doc(commonName).delete().then(() => {
           console.log("Document successfully deleted!");
           iconID.className = "fa fa-heart-o"
+          localStorage.setItem("className", "fa fa-heart-o");
+          localStorage.getItem("className");
           alert("Plant removed from bookmark");
         }).catch((error) => {
           console.error("Error removing document: ", error);

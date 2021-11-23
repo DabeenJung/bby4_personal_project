@@ -17,6 +17,8 @@ insertName();
 
 const plantCards = document.getElementById("plant-cards");
 var species;
+var code;
+var remove;
 
 function displayBookmark() {
 
@@ -26,7 +28,7 @@ function displayBookmark() {
                 allPlants.forEach(doc => {
                     species = doc.data().name.replaceAll(" ", "_").toLowerCase();;
                     let dateAdded = doc.data().dateAdded;
-                    let code = doc.data().name.replaceAll(" ", "_").toUpperCase();
+                    code = doc.data().name.replaceAll(" ", "_").toUpperCase();
 
                     let card = document.createElement("div");
                     card.setAttribute("class", "box img-fluid rounded-start");
@@ -43,6 +45,7 @@ function displayBookmark() {
 
                     let cardTitle = document.createElement("h5");
                     cardTitle.setAttribute("class", "card-title");
+                    cardTitle.setAttribute("id", "plantName");
                     cardTitle.innerHTML = "<strong>" + species + "</strong> <br>";
 
                     let cardText = document.createElement("h7");
@@ -53,7 +56,7 @@ function displayBookmark() {
                     cardText1.setAttribute("class", "fa fa-heart");
                     cardText1.setAttribute("type", "button");
                     cardText1.setAttribute("onclick", "removeFav()");
-                    cardText1.setAttribute("id", "favorite");
+                    cardText1.setAttribute("id", code);
 
                     plantCards.appendChild(card);
                     card.appendChild(photo);
@@ -72,83 +75,80 @@ displayBookmark();
 
 function removeFav() {
     firebase.auth().onAuthStateChanged(user => {
-            if (user) {
-                db.collection("users").doc(user.uid).collection("bookmark").get().then(allPlants => {
-                    allPlants.match(doc => {
-                            let remove = doc.data().name;
-                            let bookmark = db.collection("users").doc(user.uid).collection("bookmark");
-                            bookmark.doc(remove).delete().then(() => {
-                                console.log("Document successfully deleted!");
-                                console.log(species);
-                            }).catch((error) => {
-                                    console.error("Error removing document: ", error);
-                                })
-                            });
-                    })
-            }
-    });
+        if (user) {
+            db.collection("users").doc(user.uid).collection("bookmark").doc(remove).delete().then(() => {
+                console.log("Document successfully deleted!");
+                console.log(remove);
+                alert("Plant removed from bookmark");
+            }).catch((error) => {
+                console.error("Error removing document: ", error);
+            });
+        }
+    })
+    
 }
 
 
 
 
-    /*
-        function displayBookmark() {
-            firebase.auth().onAuthStateChanged(user => {
-                if (user) {
-                    db.collection("users").doc(user.uid).collection("bookmark").get()
-                        .then(allbookmark => {
-                            allbookmark.forEach(doc => {
-                                var plantName = doc.data().name;
-                                var plantId = doc.data().code;
-                                document.getElementById(plantId).innerText = plantName;
-                            })
+
+/*
+    function displayBookmark() {
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                db.collection("users").doc(user.uid).collection("bookmark").get()
+                    .then(allbookmark => {
+                        allbookmark.forEach(doc => {
+                            var plantName = doc.data().name;
+                            var plantId = doc.data().code;
+                            document.getElementById(plantId).innerText = plantName;
                         })
-                }
-            })
-        }
-        displayBookmark();
-
-
-        function displayBookmarkDate() {
-            firebase.auth().onAuthStateChanged(user => {
-                if (user) {
-                    db.collection("users").doc(user.uid).collection("bookmark").get()
-                        .then(allbookmark => {
-                            allbookmark.forEach(doc => {
-                                var dateAdded = doc.data().dateAdded;
-                                var dateAddedID = doc.data().dateAddedID;
-                                document.getElementById(dateAddedID).innerText = dateAdded;
-                            })
-                        })
-                }
-            })
-        }
-        displayBookmarkDate();
-    */
-
-    var user1 = firebase.auth().currentUser;
-
-    function checklogin() {
-        user1 = firebase.auth().currentUser;
-        if (user1) {
-            window.location.href = "add.html";
-        } else {
-            alert("You should log in first");
-            window.location.href = "bookmark.html"
-        }
-    }
-
-    function prompttologin() {
-        user1 = firebase.auth().currentUser;
-        if (user1) {
-            window.location.href = "profile.html";
-        } else {
-            var txt = confirm("Do you want to go to login page?");
-            if (txt == true) {
-                location.href = "login.html";
-            } else {
-                location.href = "bookmark.html";
+                    })
             }
+        })
+    }
+    displayBookmark();
+
+
+    function displayBookmarkDate() {
+        firebase.auth().onAuthStateChanged(user => {
+            if (user) {
+                db.collection("users").doc(user.uid).collection("bookmark").get()
+                    .then(allbookmark => {
+                        allbookmark.forEach(doc => {
+                            var dateAdded = doc.data().dateAdded;
+                            var dateAddedID = doc.data().dateAddedID;
+                            document.getElementById(dateAddedID).innerText = dateAdded;
+                        })
+                    })
+            }
+        })
+    }
+    displayBookmarkDate();
+*/
+
+var user1 = firebase.auth().currentUser;
+
+function checklogin() {
+    user1 = firebase.auth().currentUser;
+    if (user1) {
+        window.location.href = "add.html";
+    } else {
+        alert("You should log in first");
+        window.location.href = "bookmark.html"
+    }
+}
+
+function prompttologin() {
+    user1 = firebase.auth().currentUser;
+    if (user1) {
+        window.location.href = "profile.html";
+    } else {
+        var txt = confirm("Do you want to go to login page?");
+        if (txt == true) {
+            location.href = "login.html";
+        } else {
+            location.href = "bookmark.html";
         }
     }
+}
