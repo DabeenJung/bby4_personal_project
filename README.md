@@ -5,17 +5,13 @@
 * [Contents](#content)
 
 ## General Info
-This browser based web application to ...
-* Hi my name is Sharon. I'm excited to learn web development through a hands on project.
-* Valerie was here
-* Hi my name is Dabeen(Ellen). I'm excited about this project because we're creating an actual application by ourselves.
+Our team, bby4, wants to provide a website with simplified information, and to make a community think about plant ownership more welcoming and easy
 
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
 * JavaScript
 * Bootstrap
-* ...
 
 ## Content
 Content of the project folder:
@@ -23,24 +19,44 @@ Content of the project folder:
 ```
  Top level of project folder:
 ├── .gitignore               # Git ignore file
-├── index.html               # landing HTML file, this is what users see when you come to url
+├── main.html               # landing HTML file, this is what users see when you come to url
+├── add.html                 # adding plants to profile.html
+├── bookmark.html            # saving plants to own bookmark
+├── comment.html             # commenting to others' posts
+├── login.html               # login page
+├── plantinfo.html           # displaying each plant's information
+├── plants.html              # searching plants
+├── profile.html             # showing plants the user posted
 └── README.md
 
 It has the following subfolders and files:
 ├── .git                     # Folder for git repo
 ├── images                   # Folder for images
-    /blah.jpg                #
+    ├── plants               # about plants database
+    ├── user_photos          # for displaying pictures in main.html
 ├── scripts                  # Folder for scripts
-    /blah.js                 #
-├── styles                   # Folder for styles
-    /blah.css                #
+    /add.js                  # js for add.html
+    /bookmark.js             # js for bookmark.html
+    /login.js                # js for login.html
+    /main.js                 # js for main.html
+    /plantinfo.js            # js for plantinfo.html
+    /plants.js               # js for plants.html
+    /profile.js              # js for profile.html
+├── css                      # Folder for css files
+    /add.css                 # css for add.html
+    /bookmark.css            # css for bookmark.html
+    /comment.css             # css for comment.html
+    /login.css               # css for login.html
+    /main.css                # css for main.html
+    /plantinfo.css           # css for plantinfo.html
+    /plants.css              # css for plants.html
+    /profile.css             # css for profile.html
 
 Firebase hosting files:
-├── .firebaserc...
+├── /firebaseAPIbby4.js      # firebaseAPI but it's in the .gitignore
 
 
 ```
 
 Tips for file naming files and folders:
 * use lowercase with no spaces
-* use dashes (not underscore) for word separation
