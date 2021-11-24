@@ -82,6 +82,7 @@ function removeFav(clicked_id) {
                 console.log("Document successfully deleted!");
                 console.log(clicked_id);
                 alert("Plant removed from bookmark");
+                window.location.href = "bookmark.html";
             }).catch((error) => {
                 console.error("Error removing document: ", error);
             });
