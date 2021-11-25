@@ -81,6 +81,8 @@ function removeFav(clicked_id) {
             db.collection("users").doc(user.uid).collection("bookmark").doc(clicked_id).delete().then(() => {
                 console.log("Document successfully deleted!");
                 console.log(clicked_id);
+                localStorage.setItem("className", "fa fa-heart-o");
+                localStorage.getItem("className");
                 alert("Plant removed from bookmark");
                 window.location.href = "bookmark.html";
             }).catch((error) => {
