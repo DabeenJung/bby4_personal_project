@@ -144,6 +144,16 @@ function checkLogin() {
     }
 }
 
+function checkLoginBookmark() {
+    user = firebase.auth().currentUser;
+    if (user) {
+        window.location.href = "bookmark.html";
+    } else {
+        alert("You should log in first");
+        window.location.href = "login.html"
+    }
+}
+
 function promptToLogin() {
     user = firebase.auth().currentUser;
     if (user) {
