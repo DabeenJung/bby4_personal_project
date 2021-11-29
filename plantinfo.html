@@ -1,162 +1,234 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <title>True Leaf</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <title>True Leaf</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/plantinfo.css" />
+    <!-- Google Icons (Material Design)-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <!-- CSS -->
-  <link rel="stylesheet" href="./css/plantinfo.css">
-  <!-- Google Icons (Material Design)-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel = "stylesheet">
-  
+    <!-- Firebase 8 CDNs-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <!-- Link to the api keys for your firebase project -->
+    <script src="./scripts/firebaseAPIbby4.js"></script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <nav class="navbar fixed-top navbar-light bg-success">
+        <div class="container py-3" style="padding: 0">
+          <a href="javascript:history.back()"
+            ><i class="material-icons" id="backbutton">arrow_back_ios_new</i></a
+          >
+          <a class="navbar-brand" href="main.html" id="logo">True Leaf</a>
+        </div>
+      </nav>
 
-  <!-- Firebase 8 CDNs-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-  <!-- Link to the api keys for your firebase project -->
-  <script src="./scripts/firebaseAPIbby4.js"></script>
+      <div id="plant-image"></div>
 
-</head>
-<body>
-  <div id="wrapper">
-    <nav class="navbar fixed-top navbar-light bg-success">
-      <div class="container py-3" style="padding: 0;">
-        <a href="javascript:history.back()"><i class="material-icons" id="backbutton">arrow_back_ios_new</i></a>
-        <a class="navbar-brand" href="main.html" id="logo">True Leaf</a>
+      <div id="plant-name">
+        <b>Lavender</b>
+        <br />
       </div>
-    </nav>
+      <div id="plant-specie">Lavandula spp.</div>
 
-    <div id="plant-image">
-      
-    </div>
+      <hr />
+      <hr />
+      <hr />
 
-    <div id="plant-name">
-      <b>Lavender</b>
-      <br>
-    </div>
-    <div id="plant-specie">
-      Lavandula spp.
-    </div>
+      <div id="care-nav">
+        <nav class="navbar navbar-light bg-white">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="plantinfo.html">
+              <i class="material-icons">info</i>
+              <br />
+              Information
+            </a>
+            <a class="navbar-brand" href="#care-cards">
+              <i class="material-icons">water_drop</i>
+              <br />
+              Care
+            </a>
+            <a class="navbar-brand">
+              <i
+                button
+                type="button"
+                id="fav"
+                class="fa fa-heart-o"
+                onclick="addToFav()"
+              ></i>
+              <br />
+              Add to Favourites
+            </a>
+          </div>
+        </nav>
+      </div>
 
-    <hr>
-    <hr>
-    <hr>
-
-    <div id="care-nav">
-      <nav class="navbar navbar-light bg-white">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="plantinfo.html">
-            <i class="material-icons">info</i>
-            <br>
-            Information
-          </a>
-          <a class="navbar-brand" href="#care-cards">
+      <div id="description">
+        <p>About <span>Lavender</span></p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui optio quo
+          asperiores, veniam hic reprehenderit autem error ut laudantium?
+          Maiores, neque at aliquam sunt voluptatem, ducimus cupiditate quia
+          doloremque itaque deserunt porro quos. Enim sed a reiciendis id
+          cupiditate eum consectetur ab quos voluptates vitae, accusantium
+          molestiae? Ullam, iusto quasi.
+        </p>
+      </div>
+      <div id="care-cards">
+        <div class="card border-secondary mb-3">
+          <div style="text-align: center" class="card-header">
             <i class="material-icons">water_drop</i>
-            <br>
-            Care
+          </div>
+          <div class="card-body text-primary">
+            <h5 style="color: black; text-align: center" class="card-title">
+              Water
+            </h5>
+            <p style="color: black" id="water-info" class="card-text">
+              water information here
+            </p>
+            <hr />
+            <p style="color: black">
+              Would you like to be reminded when to water your plant?
+            </p>
+            <div
+              class="btn-group"
+              role="group"
+              aria-label="Basic radio toggle button group"
+            >
+              <input
+                type="radio"
+                class="btn-check"
+                name="btnradio_water"
+                id="btnradio_water1"
+                autocomplete="off"
+                checked
+              />
+              <label class="btn btn-outline-primary" for="btnradio_water1"
+                >Yes</label
+              >
+
+              <input
+                type="radio"
+                class="btn-check"
+                name="btnradio_water"
+                id="btnradio_water2"
+                autocomplete="off"
+              />
+              <label class="btn btn-outline-primary" for="btnradio_water2"
+                >No</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="card border-secondary mb-3">
+          <div style="text-align: center" class="card-header">
+            <i class="material-icons">light_mode</i>
+          </div>
+          <div class="card-body text-primary">
+            <h5 style="color: black; text-align: center" class="card-title">
+              Sunlight
+            </h5>
+            <p style="color: black" id="light-info" class="card-text">
+              light information here
+            </p>
+          </div>
+        </div>
+
+        <div class="card border-secondary mb-3">
+          <div style="text-align: center" class="card-header">
+            <i class="material-icons">yard</i>
+          </div>
+          <div class="card-body text-primary">
+            <h5 style="color: black; text-align: center" class="card-title">
+              Nutrients
+            </h5>
+            <p style="color: black" id="fertilizer-info" class="card-text">
+              Nutrient information here
+            </p>
+          </div>
+        </div>
+
+        <div class="card border-secondary mb-3">
+          <div style="text-align: center" class="card-header">
+            <i class="material-icons">thermostat</i>
+          </div>
+          <div class="card-body text-primary">
+            <h5 style="color: black; text-align: center" class="card-title">
+              Temperature
+            </h5>
+            <p style="color: black" id="temperature-info" class="card-text">
+              temperature information here
+            </p>
+          </div>
+        </div>
+
+        <div class="card border-secondary mb-3">
+          <div style="text-align: center" class="card-header">
+            <i class="material-icons">water_damage</i>
+          </div>
+          <div class="card-body text-primary">
+            <h5 style="color: black; text-align: center" class="card-title">
+              Humidity
+            </h5>
+            <p style="color: black" id="humidity-info" class="card-text">
+              humidity information here
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <nav class="navbar fixed-bottom navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="main.html">
+            <i class="material-icons">home</i>
           </a>
-          <a class="navbar-brand">
-            <i button type = "button" id = "fav" class="fa fa-heart-o" onclick="addToFav()"></i>
-            <br>
-            Add to Favourites
+          <a class="navbar-brand" href="plants.html">
+            <i class="material-icons">search</i>
+          </a>
+          <a class="navbar-brand" href="#" onclick="checkLogin()">
+            <i class="material-icons"> add_circle_outline</i>
+          </a>
+          <a class="navbar-brand" href="#" onclick="checkLogin()">
+            <i class="material-icons">favorite_border</i>
+          </a>
+          <a class="navbar-brand" href="#" onclick="promptToLogin()">
+            <i class="material-icons">account_circle</i>
           </a>
         </div>
       </nav>
     </div>
 
-    <div id="description">
-      <p>About <span>Lavender</span></p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui optio quo asperiores, veniam hic reprehenderit autem error ut laudantium? Maiores, neque at aliquam sunt voluptatem, ducimus cupiditate quia doloremque itaque deserunt porro quos.
-        Enim sed a reiciendis id cupiditate eum consectetur ab quos voluptates vitae, accusantium molestiae? Ullam, iusto quasi.</p>
-    </div>
-    <div id="care-cards">
-      <div class="card border-secondary mb-3">
-        <div style="text-align:center" class="card-header"><i class="material-icons">water_drop</i> </div>
-        <div class="card-body text-primary">
-          <h5 style="color: black; text-align: center" class="card-title">Water</h5>
-          <p style="color: black" id="water-info" class="card-text">water information here</p>
-          <hr />
-          <p style="color:black">Would you like to be reminded when to water your plant?</p>
-          <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-            <input type="radio" class="btn-check" name="btnradio_water" id="btnradio_water1" autocomplete="off" checked>
-            <label class="btn btn-outline-primary" for="btnradio_water1">Yes</label>
-
-            <input type="radio" class="btn-check" name="btnradio_water" id="btnradio_water2" autocomplete="off">
-            <label class="btn btn-outline-primary" for="btnradio_water2">No</label>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="card border-secondary mb-3">
-        <div style="text-align:center" class="card-header"><i class="material-icons">light_mode</i> </div>
-        <div class="card-body text-primary">
-          <h5 style="color: black; text-align: center" class="card-title">Sunlight</h5>
-          <p style="color: black" id="light-info" class="card-text">light information here</p>
-        </div>
-      </div>
-
-      <div class="card border-secondary mb-3">
-        <div style="text-align:center" class="card-header"><i class="material-icons">yard</i> </div>
-        <div class="card-body text-primary">
-          <h5 style="color: black; text-align: center" class="card-title">Nutrients</h5>
-          <p style="color: black" id="fertilizer-info" class="card-text">Nutrient information here</p>
-        </div>
-      </div>
-
-      <div class="card border-secondary mb-3">
-        <div style="text-align:center" class="card-header"><i class="material-icons">thermostat</i> </div>
-        <div class="card-body text-primary">
-          <h5 style="color: black; text-align: center" class="card-title">Temperature</h5>
-          <p style="color: black" id="temperature-info" class="card-text">temperature information here</p>
-        </div>
-      </div>
-
-      <div class="card border-secondary mb-3">
-        <div style="text-align:center" class="card-header"><i class="material-icons">water_damage</i> </div>
-        <div class="card-body text-primary">
-          <h5 style="color: black; text-align: center" class="card-title">Humidity</h5>
-          <p style="color: black" id="humidity-info" class="card-text">humidity information here</p>
-        </div>
-      </div>
-    </div>
-
-    <nav class="navbar fixed-bottom navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="main.html">
-          <i class="material-icons">home</i>
-        </a>
-        <a class="navbar-brand" href="plants.html">
-          <i class="material-icons">search</i>
-        </a>
-        <a class="navbar-brand" href="#" onclick="checklogin()">
-          <i class="material-icons"> add_circle_outline</i>
-        </a>
-        <a class="navbar-brand" href="bookmark.html" onclick="checklogin()">
-          <i class="material-icons">favorite_border</i>
-        </a>
-        <a class="navbar-brand" href="#" onclick="prompttologin()">
-          <i class="material-icons">account_circle</i>
-        </a>
-      </div>
-    </nav>
-  </div>
-  <!--------------------------------------------------------------------->
-  <!-- JS files: Your own JavaScript functions included here    -->
-  <!--------------------------------------------------------------------->
-  <script src="scripts/plantinfo.js"></script>
-  <script src="./scripts/bookmark.js"></script>
-  <script src="./scripts/login.js"></script>
-</body>
-
+    <!-- JS -->
+    <script src="./scripts/global.js"></script>
+    <script src="scripts/plantinfo.js"></script>
+    <script src="./scripts/bookmark.js"></script>
+  </body>
 </html>

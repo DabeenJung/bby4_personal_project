@@ -1,4 +1,4 @@
-const plantDB = db.collection("plants");
+// Initialize variables for plant care information.
 var code;
 var species;
 var description;
@@ -11,19 +11,19 @@ var commonName;
 var photo;
 var imageName;
 
+// Gets the name of the plant to query from the URL parameter.
 async function getPlantCode() {
-  // create a URL object
   let params = new URL(window.location.href);
   code = params.searchParams.get("code");
   return code;
 }
 
+// Gets the plant care information from the database.
 function getPlantData(plantCode) {
   var query = plantDB.where("code", "==", plantCode)
     .get()
     .then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
-        // doc.data() is never undefined for query doc snapshots
         imageName = code.toLowerCase();
         photo = document.createElement("img");
         photo.setAttribute("src", "./images/plants/" + imageName + ".png");
@@ -36,7 +36,6 @@ function getPlantData(plantCode) {
         humidity = doc.data().humidity;
         temperature = doc.data().temperature;
         commonName = doc.data().common_name;
-        // console.log(doc.id, " => ", doc.data());
         console.log(doc.data().description);
         console.log(doc.data().humidity);
         loadPlantData();
@@ -45,6 +44,7 @@ function getPlantData(plantCode) {
 
 }
 
+// Loads the plant care information in the existing HTML elements.
 function loadPlantData() {
   document.getElementById("plant-image").appendChild(photo);
   document.getElementById("plant-name").innerHTML = commonName;
@@ -64,7 +64,7 @@ function loadPlantData() {
 //  console.log("changed color");
 //});
 
-$(document).ready(function() {
+$(document).ready(function () {
   var state = document.getElementById("fav");
   console.log(state.className);
   if (window.localStorage.getItem("fav") != null) {
@@ -124,7 +124,7 @@ function addToFav() {
         });
       };
     } else {
-      checklogin();
+      checkLogin();
     }
   });
 }

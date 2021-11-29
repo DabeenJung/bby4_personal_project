@@ -130,7 +130,7 @@ function cancelUserInfo() {
     locationfield.style.border = "1px solid white"
 }
 var user1 = firebase.auth().currentUser;
-function checklogin() {
+function checkLogin() {
     user1 = firebase.auth().currentUser;
     if (user1) {
         window.location.href = "add.html";

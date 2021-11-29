@@ -11,12 +11,17 @@ body {
   justify-items: center;
 }
 
+.cards {
+  margin: 10px auto;
+}
+
 .card {
   width: 390px;
 }
 
 .card-header {
   display: grid;
+  background-color: white;
   grid-template-columns: 20% 80%;
 }
 
@@ -41,6 +46,14 @@ body {
   margin: auto;
 }
 
+.cardBody .card-title {
+  display: inline;
+}
+
+.cardBody .material-icons {
+  float: right;
+}
+
 #card-group {
   display: flex;
   flex-flow: row wrap;
@@ -54,8 +67,6 @@ body {
   margin: auto;
 }
 
-
-
 #backbutton {
   color: black;
 }
@@ -68,8 +79,4 @@ body {
 
 .username {
   display: inline-block;
-}
-
-.cards {
-  margin: 10px auto;
 }

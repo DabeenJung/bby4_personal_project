@@ -1,24 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/profile.css">
+    <link rel="stylesheet" href="./css/profile.css" />
     <!-- Google Icons (Material Design)-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
 
     <!-- Firebase 8 CDNs-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-        </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
@@ -27,72 +35,105 @@
     <!-- Link to the api keys for your firebase project -->
     <script src="./scripts/firebaseAPIbby4.js"></script>
     <title>True Leaf</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav class="navbar navbar-light bg-success">
-        <div class="container py-3">
-            <a href="javascript:history.back()"><i class="material-icons">arrow_back_ios_new</i></a>
-            <a class="navbar-brand" href="main.html" id="logo">True Leaf</a>
-        </div>
+      <div class="container py-3">
+        <a href="javascript:history.back()"
+          ><i class="material-icons">arrow_back_ios_new</i></a
+        >
+        <a class="navbar-brand" href="main.html" id="logo">True Leaf</a>
+      </div>
     </nav>
-    <br>
+    <br />
     <div class="user-profile">
-        <div class="avatar">
-            <img alt="user display picture" src="https://i.pravatar.cc/150/">
-            <br>
-        </div>
-        <div class="info">
-            <fieldset id="personalInfo" disabled>
-                <input type="text" id="name-goes-here" class="inputs" placeholder="Enter you name">
-                <br>
-                <input type="text" id="location" class="inputs" value="somewhere" placeholder="Enter your location">
-            </fieldset>
-            <h7 class="desc"><span id="numberOfPlants">0</span> Plants</h7>
-        </div>
+      <div class="avatar">
+        <img alt="user display picture" src="https://i.pravatar.cc/150/" />
+        <br />
+      </div>
+      <div class="info">
+        <fieldset id="personalInfo" disabled>
+          <input
+            type="text"
+            id="name-goes-here"
+            class="inputs"
+            placeholder="Enter you name"
+          />
+          <br />
+          <input
+            type="text"
+            id="location"
+            class="inputs"
+            value="somewhere"
+            placeholder="Enter your location"
+          />
+        </fieldset>
+        <h7 class="desc"><span id="numberOfPlants">0</span> Plants</h7>
+      </div>
     </div>
     <div id="buttons">
-        <button type="button" id="editbutton" class="btn btn-success" onclick="editUserInfo()">Edit</button>
-        <button type="button" id="savebutton" class="btn btn-success" onclick="saveUserInfo()">Save</button>
-        <button type="button" id="cancelbutton" class="btn btn-success" onclick="cancelUserInfo()">Cancel</button>
+      <button
+        type="button"
+        id="editbutton"
+        class="btn btn-success"
+        onclick="editUserInfo()"
+      >
+        Edit
+      </button>
+      <button
+        type="button"
+        id="savebutton"
+        class="btn btn-success"
+        onclick="saveUserInfo()"
+      >
+        Save
+      </button>
+      <button
+        type="button"
+        id="cancelbutton"
+        class="btn btn-success"
+        onclick="cancelUserInfo()"
+      >
+        Cancel
+      </button>
     </div>
-    <br>
+    <br />
     <div class="card-group">
-        <div id="plant-cards" class="row">
-
-        </div>
+      <div id="plant-cards" class="row"></div>
     </div>
 
-    <br><br>
+    <br /><br />
 
     <nav class="navbar fixed-bottom navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="main.html">
-                <i class="material-icons">home</i>
-            </a>
-            <a class="navbar-brand" href="plants.html">
-                <i class="material-icons">search</i>
-            </a>
-            <a class="navbar-brand" href="#" onclick="checklogin()">
-                <i class="material-icons"> add_circle_outline</i>
-            </a>
-            <a class="navbar-brand" href="bookmark.html" onclick="checklogin()">
-                <i class="material-icons">favorite_border</i>
-            </a>
-            <a class="navbar-brand" href="profile.html">
-                <i class="material-icons" style="color: #198754">account_circle</i>
-            </a>
-        </div>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="main.html">
+          <i class="material-icons">home</i>
+        </a>
+        <a class="navbar-brand" href="plants.html">
+          <i class="material-icons">search</i>
+        </a>
+        <a class="navbar-brand" href="#" onclick="checkLogin()">
+          <i class="material-icons"> add_circle_outline</i>
+        </a>
+        <a class="navbar-brand" href="#" onclick="checkLogin()">
+          <i class="material-icons">favorite_border</i>
+        </a>
+        <a class="navbar-brand" href="#" onclick="promptToLogin()">
+          <i class="material-icons" style="color: #198754">account_circle</i>
+        </a>
+      </div>
     </nav>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- JS -->
+    <script src="./scripts/global.js"></script>
     <script src="./scripts/profile.js"></script>
-    <script src="./scripts/login.js"></script>
-</body>
-
+  </body>
 </html>

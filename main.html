@@ -54,7 +54,7 @@
       </div>
     </nav>
 
-    <!-- Templates for general use, not displayed -->
+    <!-- Template for user plant cards -->
     <template id="CardTemplate">
       <div class="card">
         <div class="card-header">
@@ -70,66 +70,16 @@
           />
         </div>
         <div class="cardBody">
-          <h5 class="card-title" style="display: inline">Lavender</h5>
+          <h5 class="card-title">plant name</h5>
           <a href="comment.html"
-            ><i class="material-icons" style="float: right"
-              >chat_bubble_outline</i
-            ></a
+            ><i class="material-icons">chat_bubble_outline</i></a
           >
-          <i class="material-icons" style="float: right">favorite_border</i>
+          <i class="material-icons">favorite_border</i>
         </div>
       </div>
     </template>
 
-    <div id="plant-cards" class="row">
-      <!-- <br />
-      <div class="cards">
-        <i class="material-icons" style="font-size: 30px; line-height: 2"
-          >&emsp;&emsp;account_circle</i
-        >
-        <h6 style="display: inline-block">lalala_0524</h6>
-        <div>
-          <img
-            src="../images/plants/lavender.png"
-            class="plantImage"
-            alt="..."
-          />
-        </div>
-        <div class="cardBody">
-          <h5 class="card-title" style="display: inline">Lavender</h5>
-          <a href="comment.html"
-            ><i class="material-icons" style="float: right"
-              >chat_bubble_outline</i
-            ></a
-          >
-          <i class="material-icons" style="float: right">favorite_border</i>
-        </div>
-      </div>
-    </div>
-    <div class="card-group">
-      <div class="cards">
-        <i class="material-icons" style="font-size: 30px; line-height: 2"
-          >&emsp;&emsp;account_circle</i
-        >
-        <h6 style="display: inline-block">____emily</h6>
-        <div>
-          <img
-            src="../images/plants/bird_nest_fern.png"
-            class="plantImage"
-            alt="..."
-          />
-        </div>
-        <div class="cardBody">
-          <h5 class="card-title" style="display: inline">Bird's nest fern</h5>
-          <a href="comment.html"
-            ><i class="material-icons" style="float: right"
-              >chat_bubble_outline</i
-            ></a
-          >
-          <i class="material-icons" style="float: right">favorite_border</i>
-        </div>
-      </div> -->
-    </div>
+    <div id="plant-cards" class="row"></div>
     <br /><br />
 
     <nav class="navbar fixed-bottom navbar-light bg-light">
@@ -140,19 +90,19 @@
         <a class="navbar-brand" href="plants.html">
           <i class="material-icons">search</i>
         </a>
-        <a class="navbar-brand" href="#" onclick="checklogin()">
+        <a class="navbar-brand" href="#" onclick="checkLogin()">
           <i class="material-icons"> add_circle_outline</i>
         </a>
-        <a class="navbar-brand" href="bookmark.html" onclick="checklogin()">
+        <a class="navbar-brand" href="#" onclick="checkLogin()">
           <i class="material-icons">favorite_border</i>
         </a>
-        <a class="navbar-brand" href="#" onclick="prompttologin()">
+        <a class="navbar-brand" href="#" onclick="promptToLogin()">
           <i class="material-icons">account_circle</i>
         </a>
       </div>
     </nav>
+    <!-- JS -->
     <script src="./scripts/global.js"></script>
     <script src="./scripts/main.js"></script>
-    <script src="./scripts/login.js"></script>
   </body>
 </html>
