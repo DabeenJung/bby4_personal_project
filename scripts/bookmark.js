@@ -15,7 +15,7 @@ function insertName() {
 }
 insertName();
 
-const plantCards = document.getElementById("plant-cards");
+// const plantCards = document.getElementById("plant-cards");
 var species;
 var code;
 var remove;
