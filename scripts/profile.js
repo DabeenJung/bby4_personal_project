@@ -1,6 +1,41 @@
 var currentUser, user_Name, user_location;
 
-function insertUserInfo() {
+
+// Gets the user for the profile to retrieve.
+async function getUserProfile() {
+    let params = new URL(window.location.href);
+    let stringParams = params.searchParams.toString();
+    console.log(stringParams);
+    if (stringParams.includes("user")) {
+        return params.searchParams.get("user");
+    } else {
+        console.log("no user found");
+        return null;
+    }
+}
+
+// Gets the user's profile data. Uses the URL param if available, else uses the currently logged in user. Placeholder "404" profile to come.
+getUserProfile().then(user => {
+    if (!user) {
+        console.log("returned null");
+        loadCurrentUser()
+    }
+    currentUser = db.collection("users").doc(user);
+    currentUser.get()
+        .then(userDoc => {
+            user_Name = userDoc.data().name;
+            user_location = userDoc.data().location;
+            console.log(user_Name);
+            if (user_Name != null) {
+                document.getElementById("name-goes-here").value = user_Name;
+            }
+            if (user_location != null) {
+                document.getElementById("location").value = user_location;
+            }
+        })
+});
+
+function loadCurrentUser() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
             currentUser = db.collection("users").doc(user.uid);
@@ -17,15 +52,37 @@ function insertUserInfo() {
                     }
                 })
         } else {
-            // No user is signed in.
+            // No user is signed in. Use placeholder profile or have message to say no user found.
         }
     });
 }
-insertUserInfo();
+//insertUserInfo();
 
-
+// function insertUserInfo() {
+//     firebase.auth().onAuthStateChanged(user => {
+//         if (user) {
+//             currentUser = db.collection("users").doc(user.uid);
+//             currentUser.get()
+//                 .then(userDoc => {
+//                     user_Name = userDoc.data().name;
+//                     user_location = userDoc.data().location;
+//                     console.log(user_Name);
+//                     if (user_Name != null) {
+//                         document.getElementById("name-goes-here").value = user_Name;
+//                     }
+//                     if (user_location != null) {
+//                         document.getElementById("location").value = user_location;
+//                     }
+//                 })
+//         } else {
+//             // No user is signed in.
+//         }
+//     });
+// }
+// insertUserInfo();
 
 var count = 0;
+
 function displayPlants() {
     const plantCards = document.getElementById("plant-cards");
 
@@ -91,17 +148,18 @@ function saveUserInfo() {
     userName = document.getElementById("name-goes-here").value;
     userLocation = document.getElementById("location").value;
 
-    currentUser.update ({
+    currentUser.update({
         name: userName,
         location: userLocation
     })
     document.getElementById("personalInfo").disabled = true;
     namefield.style.border = "1px solid white";
     locationfield.style.border = "1px solid white"
-    savebutton.style.visibility= "hidden";
+    savebutton.style.visibility = "hidden";
     editbutton.style.visibility = "visible";
     cancelbutton.style.visibility = "hidden";
 }
+
 function cancelUserInfo() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -123,19 +181,9 @@ function cancelUserInfo() {
         }
     });
     document.getElementById("personalInfo").disabled = true;
-    savebutton.style.visibility= "hidden";
+    savebutton.style.visibility = "hidden";
     cancelbutton.style.visibility = "hidden";
     editbutton.style.visibility = "visible";
     namefield.style.border = "1px solid white";
     locationfield.style.border = "1px solid white"
-}
-var user1 = firebase.auth().currentUser;
-function checkLogin() {
-    user1 = firebase.auth().currentUser;
-    if (user1) {
-        window.location.href = "add.html";
-    } else {
-        alert("You should log in first");
-        window.location.href = "profile.html"
-    }
 }

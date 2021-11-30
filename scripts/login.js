@@ -116,7 +116,7 @@ function checkLoginResult(){
 
 checkLoginResult();
 
-function checkLogin() {
+function checkLoginAdd() {
     user1 = firebase.auth().currentUser;
     if (user1) {
         window.location.href = "add.html";

@@ -78,5 +78,13 @@ body {
 }
 
 .username {
-  display: inline-block;
+  text-decoration: none;
+  color: black;
+  font-size: larger;
+}
+
+.username:hover {
+  text-decoration: underline;
+  color: #198754;
+  font-weight: bold;
 }

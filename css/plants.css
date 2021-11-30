@@ -1,69 +1,81 @@
 #logo {
-    margin-left: 35%;
-  }
+  margin-left: 35%;
+}
 
-  a {
-    color: rgba(0, 0, 0, 0.9);
-  }
+a {
+  color: rgba(0, 0, 0, 0.9);
+}
 
-  .input-group {
-    padding: 40px 50px 20px 50px;
-  }
+.input-group {
+  padding: 40px 50px 20px 50px;
+}
 
-  .form-control:focus {
-    box-shadow: none;
-  }
+.form-control:focus {
+  box-shadow: none;
+}
 
-  .card-group {
-    margin: 20px 50px;
-  }
+.clear-search {
+  visibility: hidden;
+  display: block;
+  margin-left: 50px;
+}
 
-  .card-group .row {
-    justify-content: space-evenly;
-    gap: 0.5em;
-  }
+.clear-search:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: bold;
+}
 
-  .card {
-    border: none;
-    max-width: 45%;
-    padding: 10px 0;
-    width: 18rem;
-  }
+.card-group {
+  margin: 20px 50px;
+}
 
-  .card-body {
-    text-decoration: none;
-    width: 390px;
-    margin: auto;
-  }
+.card-group .row {
+  justify-content: space-evenly;
+  gap: 0.5em;
+}
 
-  .card-title {
-    display: inline;
-  }
+.card {
+  border: none;
+  max-width: 45%;
+  padding: 10px 0;
+  width: 18rem;
+}
 
-  .card-text {
-    display: block;
-  }
+.card-body {
+  text-decoration: none;
+  width: 390px;
+  margin: auto;
+}
 
-  .card-img-top {
-    margin: 1% auto;
-  }
+.card-title {
+  display: inline;
+}
 
-  .navbar-brand {
-    margin: auto;
-  }
+.card-text {
+  display: block;
+}
 
-  #lavender {
-    text-decoration: none;
-  }
+.card-img-top {
+  margin: 1% auto;
+}
 
-  #lavender:hover {
-    color: #198754;
-  }
+.navbar-brand {
+  margin: auto;
+}
 
-  .linkstoinfo {
-    text-decoration: none;
-  }
-  
-  .linkstoinfo:hover {
-    color: #198754;
-  }
+#lavender {
+  text-decoration: none;
+}
+
+#lavender:hover {
+  color: #198754;
+}
+
+.linkstoinfo {
+  text-decoration: none;
+}
+
+.linkstoinfo:hover {
+  color: #198754;
+}

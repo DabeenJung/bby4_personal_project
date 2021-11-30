@@ -134,7 +134,7 @@ function checkLoginResult() {
     ui.start('#firebaseui-auth-container', uiConfig);
 }
 
-function checkLogin() {
+function checkLoginAdd() {
     user = firebase.auth().currentUser;
     if (user) {
         window.location.href = "add.html";

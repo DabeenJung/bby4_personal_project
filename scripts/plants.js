@@ -36,16 +36,26 @@ function addCards(doc) {
   cardCaption.appendChild(cardText);
 }
 
-// Adds an event listener to the search button to call the searchPlant function.
+// Adds a click event listener to the search button to call the searchPlant function.
 document.getElementById("searchButton").addEventListener("click", function () {
   searchPlant();
 });
 
-// Adds an event listener to the clear option in the search field and reloads the page with all plants when called. 
-document.getElementById("searchField").addEventListener("search", function (event) {
+// Adds an 'Enter key press' event listener to the search button to call the searchPlant function.
+document.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    console.log('enter');
+    searchPlant();
+  }
+});
+
+// Reloads the page with default set of plants when called. 
+function resetSearch() {
+  document.getElementById("searchField").value = "";
   clearCards();
   displayAllPlants();
-});
+  document.querySelector(".clear-search").style.visibility = "hidden";
+}
 
 // Gets the plants associated with the search query and adds their plant cards to the page.
 function searchPlant() {
@@ -56,6 +66,7 @@ function searchPlant() {
       //console.log(doc.data());
     });
   });
+  document.querySelector(".clear-search").style.visibility = "visible";
 }
 
 // Prepares and adds the plant cards based on the query results.
