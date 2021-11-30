@@ -15,11 +15,11 @@ function insertName() {
 }
 insertName();
 
-// const plantCards = document.getElementById("plant-cards");
 var species;
 var code;
 var remove;
 
+// pulls user bookmarks from database and displays the plants in user bookmark collection
 function displayBookmark() {
 
     firebase.auth().onAuthStateChanged(user => {
@@ -74,6 +74,7 @@ function displayBookmark() {
 }
 displayBookmark();
 
+// removes plant from bookmark page when user clicks heart icon
 function removeFav(clicked_id) {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -92,10 +93,6 @@ function removeFav(clicked_id) {
     })
 
 }
-
-
-
-
 
 /*
     function displayBookmark() {
