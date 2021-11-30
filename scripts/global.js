@@ -139,8 +139,10 @@ function checkLoginAdd() {
     if (user) {
         window.location.href = "add.html";
     } else {
-        alert("You should log in first");
-        window.location.href = "login.html"
+        var txt = confirm("You need to be logged in before you can add plants to your profile. Go to login page?");
+        if (txt == true) {
+            location.href = "login.html";
+        }
     }
 }
 
@@ -149,8 +151,10 @@ function checkLoginBookmark() {
     if (user) {
         window.location.href = "bookmark.html";
     } else {
-        alert("You should log in first");
-        window.location.href = "login.html"
+        var txt = confirm("You need to be logged in before you can favourite plants. Go to login page?");
+        if (txt == true) {
+            location.href = "login.html";
+        }
     }
 }
 
@@ -160,10 +164,8 @@ function promptToLogin() {
         window.location.href = "profile.html";
     } else {
         var txt = confirm("Do you want to go to login page?");
-        if (txt == true) {
-            location.href = "login.html";
-        } else {
-            location.href = "login.html";
+        if (txt == true) {} else {
+            //
         }
     }
 }
