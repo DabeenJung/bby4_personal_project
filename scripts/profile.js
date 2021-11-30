@@ -76,7 +76,7 @@ function displayPlants(userID) {
                 let card = document.createElement("div");
                 card.setAttribute("class", "card col-auto");
                 let photo = document.createElement("img");
-                photo.setAttribute("src", "./images/plants/" + imageName + ".png");
+                photo.setAttribute("src", "./images/user_photos/" + imageName + ".jpg");
                 let cardCaption = document.createElement("div");
                 cardCaption.setAttribute("class", "card-body");
                 let cardTitle = document.createElement("h5");
