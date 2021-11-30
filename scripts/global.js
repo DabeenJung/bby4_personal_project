@@ -49,60 +49,6 @@ function checkLoginResult() {
                     return true;
                 }
 
-                // function writeBookmarks() {
-                //     var bookmark = db.collection("users").doc(user.uid).collection("bookmark");
-
-                //     bookmark.add({
-                //         code: "BBY01",
-                //         dateAddedID: "fav1",
-                //         dateAdded: "03/07/2020",
-                //         name: "Monstera"
-                //     });
-                //     bookmark.add({
-                //         code: "BBY02",
-                //         name: "Peace Lily",
-                //         dateAdded: "14/08/2021",
-                //         dateAddedID: "fav2"
-                //     });
-                //     bookmark.add({
-                //         code: "BBY03",
-                //         name: "Money Tree",
-                //         dateAdded: "10/08/2021",
-                //         dateAddedID: "fav3"
-                //     });
-                // }
-                // writeBookmarks();
-
-                // function writePlants() {
-                //     var plants = db.collection("users").doc(user.uid).collection("plants");
-
-                //     plants.add({
-                //         code: "ficus_burgundy",
-                //         common_name: "Ficus Burgundy",
-                //         nickname: "ficus",
-                //         adoption: "Adopted on 2020-07-03"
-                //     });
-                //     plants.add({
-                //         code: "ficus_tineke",
-                //         common_name: "Ficus Tineke",
-                //         nickname: "Ruby",
-                //         adoption: "Adopted on 2021-08-14"
-                //     });
-                //     plants.add({
-                //         code: "zz_plant",
-                //         common_name: "ZZ Plant",
-                //         nickname: "zz",
-                //         adoption: "Adopted on 2021-08-10"
-                //     });
-                //     plants.add({
-                //         code: "lavender",
-                //         common_name: "Lavender",
-                //         nickname: "Lalala",
-                //         adoption: "Adopted on 2021-05-24"
-                //     });
-                // }
-                // writePlants();
-
                 return false;
             },
             uiShown: function () {
@@ -164,8 +110,8 @@ function promptToLogin() {
         window.location.href = "profile.html";
     } else {
         var txt = confirm("Do you want to go to login page?");
-        if (txt == true) {} else {
-            //
+        if (txt == true) {
+            location.href = "login.html";
         }
     }
 }
