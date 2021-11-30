@@ -83,6 +83,7 @@ var code
 var save
 var iconID
 
+// Allows user to add plant to bookmark page by clicking the heart icon in the plant info page
 function addToFav() {
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
