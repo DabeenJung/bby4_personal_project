@@ -1,5 +1,6 @@
 var currentUser;
 
+// Saves the plant data that the user added to the firebase.
 function savePlantInfo() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {

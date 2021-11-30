@@ -37,6 +37,7 @@ getUserProfile().then(userID => {
     }
 });
 
+// Gets user's name and location from the firebase and displays them.
 function loadCurrentUser() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -62,6 +63,7 @@ function loadCurrentUser() {
     });
 }
 
+// Gets the plant data under uid from the firebase and display them.
 function displayPlants(userID) {
     let count = 0;
     db.collection("users").doc(userID).collection("plants").get()
@@ -173,6 +175,7 @@ function displayPlants(userID) {
 
 var namefield, locationfield, editbutton, cancelbutton, savebutton;
 
+// Allows the user to edit their profile information.
 function editUserInfo() {
     //Enable the form fields
     document.getElementById('personalInfo').disabled = false;
@@ -188,6 +191,7 @@ function editUserInfo() {
     cancelbutton.style.visibility = "visible";
 }
 
+// Allows the user to save the information they edited.
 function saveUserInfo() {
     userName = document.getElementById("name-goes-here").value;
     userLocation = document.getElementById("location").value;
@@ -204,6 +208,7 @@ function saveUserInfo() {
     cancelbutton.style.visibility = "hidden";
 }
 
+// Allows the user to cancel what they edited.
 function cancelUserInfo() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
