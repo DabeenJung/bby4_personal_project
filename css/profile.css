@@ -57,12 +57,15 @@ a {
 .card-title {
     display: inline;
 }
+
 .card-text1 {
     display: block;
 }
+
 .card-text {
     display: block;
 }
+
 #name-goes-here {
     font-weight: bold;
     font-size: 24px;
@@ -73,7 +76,7 @@ a {
     border-radius: 0.5em;
     margin-bottom: 5px;
 }
-    
+
 #location {
     text-align: center;
     width: 220px;
@@ -81,10 +84,12 @@ a {
     background-color: white;
     border-radius: 0.5em;
 }
+
 #buttons {
     display: grid;
     grid-template-columns: 65% 10% 10% 2% 10% 3%;
 }
+
 #editbutton {
     padding: 3px 0;
     width: 55px;
@@ -93,6 +98,7 @@ a {
     grid-row: 1 / span 1;
     justify-self: end;
 }
+
 #savebutton {
     padding: 3px 0;
     font-size: 14px;
@@ -101,6 +107,7 @@ a {
     grid-column: 5 / span 1;
     grid-row: 1 / span 1;
 }
+
 #cancelbutton {
     padding: 3px 0;
     width: 55px;
