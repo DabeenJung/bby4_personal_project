@@ -31,6 +31,14 @@ body {
   font-size: 30px;
 }
 
+.cardBody .material-icons {
+  color: black;
+}
+
+.cardBody .material-icons:hover {
+  color: #198754;
+}
+
 .card-header .username {
   grid-column: 2;
 }

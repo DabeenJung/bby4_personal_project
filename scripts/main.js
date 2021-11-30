@@ -14,14 +14,17 @@ function displayUserPlants() {
                         if (count < limit) {
                             let CardTemplate = document.getElementById("CardTemplate");
                             let newcard = CardTemplate.content.cloneNode(true);
+                            let photo = doc.data().common_name.replaceAll(" ", "_").toLowerCase();
                             newcard.querySelector(".username").innerHTML = name;
                             newcard.querySelector(".username").setAttribute("href", "profile.html?user=" + id);
                             newcard.querySelector(".card-image-link").setAttribute("href", "profile.html?user=" + id);
                             // use dummy image if no user photo found
-                            let fileLoc = "./images/user_photos/" + doc.data().code + ".jpg";
+                            let fileLoc = "./images/user_photos/" + photo + ".jpg";
+                            // let fileLoc = "./images/user_photos/" + doc.data().code + ".jpg";
                             if (checkFileExists(fileLoc)) {
                                 newcard.querySelector(".card-image").src =
-                                    "./images/user_photos/" + doc.data().code + ".jpg";
+                                "./images/user_photos/" + photo + ".jpg";
+                                    // "./images/user_photos/" + doc.data().code + ".jpg";
                             } else {
                                 newcard.querySelector(".card-image").src =
                                     "./images/user_photos/dummy_image.jpg";
