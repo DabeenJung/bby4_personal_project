@@ -102,7 +102,7 @@ function addToFav() {
         console.log(Day);
         console.log(Month);
         console.log(Year);
-        date = "<b>" + Day + "/" + Month + "/" + Year + "</b>"
+        date = Year + "-" + Month + "-" + Day
 
         userBookmark.doc(commonName).set({
           name: commonName,

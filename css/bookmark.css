@@ -17,6 +17,14 @@ a {
     margin-top: 10px;
 }
 
+.linkstoinfo {
+    text-decoration: none;
+}
+
+.linkstoinfo:hover {
+    color: #198754;
+}
+
 .box img {
     width: 100px;
     margin: auto;
@@ -47,7 +55,7 @@ a {
 .box {
     margin: 30px 0;
     display: grid;
-    grid-template-columns: 33% 45% 22%;
+    grid-template-columns: 33% 53% 16%;
 }
 
 .img-fluid.rounded-start {
@@ -70,4 +78,8 @@ a {
 }
 #plant-cards {
     margin: 0 auto;
+}
+
+.fa.fa-heart {
+    margin-top: 15px;
 }

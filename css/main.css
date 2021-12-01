@@ -17,12 +17,13 @@ body {
 
 .card {
   width: 390px;
+  margin-top: 17px;
 }
 
 .card-header {
   display: grid;
   background-color: white;
-  grid-template-columns: 20% 80%;
+  grid-template-columns: 12% 88%;
 }
 
 .card-header .material-icons {
@@ -45,7 +46,6 @@ body {
 
 .row {
   justify-content: space-evenly;
-  gap: 0.5em;
 }
 
 .cardBody {
