@@ -56,8 +56,12 @@ It has the following subfolders and files:
 Firebase hosting files:
 ├── /firebaseAPIbby4.js      # firebaseAPI but it's in the .gitignore
 
-
-```
+cite references for images:
+- 2021. [online] Available at: <https://www.flickr.com/> [Accessed 2 December 2021]
+- Valeris, M. and Avendano, K., 2021. Attention, Wannabe Gardeners: These Indoor Plants That Are Almost Impossible to Kill. [online] Good Housekeeping. Available at: <https://www.goodhousekeeping.com/home/gardening/advice/g1285/hard-to-kill-plants/> [Accessed 2 December 2021]
+- Images.google.com. 2021. Google Images. [online] Available at: https://images.google.com/ [Accessed 2 December 2021]
+- Bloomscape. 2021. Bloomscape | Home Ready Plants Delivered to Your Door. [online] Available at: https://bloomscape.com/ [Accessed 2 December 2021]
+- Morgan, B., Mendelsohn, H. and Andriotis, M., 2021. What Indoor Plant You Should Get, Depending On Home Size and Experience Level. [online] House Beautiful. Available at: <https://www.housebeautiful.com/lifestyle/gardening/g2495/indoor-plants/> [Accessed 2 December 2021]
 
 Tips for file naming files and folders:
 * use lowercase with no spaces
