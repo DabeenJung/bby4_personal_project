@@ -1,6 +1,5 @@
 var currentUser, userName, user_location;
 
-
 // Gets the user for the profile to retrieve.
 async function getUserProfile() {
     let params = new URL(window.location.href);
