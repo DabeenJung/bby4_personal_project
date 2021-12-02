@@ -90,7 +90,7 @@ a {
     grid-template-columns: 65% 10% 10% 2% 10% 3%;
 }
 
-#editbutton {
+#edit-button {
     padding: 3px 0;
     width: 55px;
     font-size: 14px;
@@ -99,7 +99,7 @@ a {
     justify-self: end;
 }
 
-#savebutton {
+#save-button {
     padding: 3px 0;
     font-size: 14px;
     width: 55px;
@@ -108,7 +108,7 @@ a {
     grid-row: 1 / span 1;
 }
 
-#cancelbutton {
+#cancel-button {
     padding: 3px 0;
     width: 55px;
     font-size: 14px;

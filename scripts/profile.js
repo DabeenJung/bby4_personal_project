@@ -1,4 +1,4 @@
-var currentUser, user_Name, user_location;
+var currentUser, userName, user_location;
 
 
 // Gets the user for the profile to retrieve.
@@ -20,15 +20,15 @@ getUserProfile().then(userID => {
         loadCurrentUser();
     } else {
         displayPlants(userID);
-        document.getElementById("editbutton").style.visibility = "hidden";
+        document.getElementById("edit-button").style.visibility = "hidden";
         currentUser = db.collection("users").doc(userID);
         currentUser.get()
             .then(userDoc => {
-                user_Name = userDoc.data().name;
+                userName = userDoc.data().name;
                 user_location = userDoc.data().location;
-                console.log(user_Name);
-                if (user_Name != null) {
-                    document.getElementById("name-goes-here").value = user_Name;
+                console.log(userName);
+                if (userName != null) {
+                    document.getElementById("name-goes-here").value = userName;
                 }
                 if (user_location != null) {
                     document.getElementById("location").value = user_location;
@@ -43,15 +43,15 @@ function loadCurrentUser() {
         if (user) {
             currentUser = db.collection("users").doc(user.uid);
             displayPlants(user.uid);
-            document.getElementById("editbutton").style.visibility = "visible";
+            document.getElementById("edit-button").style.visibility = "visible";
             console.log("user id " + user.uid);
             currentUser.get()
                 .then(userDoc => {
-                    user_Name = userDoc.data().name;
+                    userName = userDoc.data().name;
                     user_location = userDoc.data().location;
-                    console.log(user_Name);
-                    if (user_Name != null) {
-                        document.getElementById("name-goes-here").value = user_Name;
+                    console.log(userName);
+                    if (userName != null) {
+                        document.getElementById("name-goes-here").value = userName;
                     }
                     if (user_location != null) {
                         document.getElementById("location").value = user_location;
@@ -112,11 +112,11 @@ function displayPlants(userID) {
 //             currentUser = db.collection("users").doc(user.uid);
 //             currentUser.get()
 //                 .then(userDoc => {
-//                     user_Name = userDoc.data().name;
+//                     userName = userDoc.data().name;
 //                     user_location = userDoc.data().location;
-//                     console.log(user_Name);
-//                     if (user_Name != null) {
-//                         document.getElementById("name-goes-here").value = user_Name;
+//                     console.log(userName);
+//                     if (userName != null) {
+//                         document.getElementById("name-goes-here").value = userName;
 //                     }
 //                     if (user_location != null) {
 //                         document.getElementById("location").value = user_location;
@@ -173,22 +173,22 @@ function displayPlants(userID) {
 //     })
 // }
 
-var namefield, locationfield, editbutton, cancelbutton, savebutton;
+var namefield, locationfield, edit-button, cancel-button, save-button;
 
 // Allows the user to edit their profile information.
 function editUserInfo() {
     //Enable the form fields
-    document.getElementById('personalInfo').disabled = false;
+    document.getElementById('personal-info').disabled = false;
     namefield = document.getElementById("name-goes-here");
     locationfield = document.getElementById("location");
     namefield.style.border = "1px solid black";
     locationfield.style.border = "1px solid black";
-    savebutton = document.getElementById("savebutton");
-    savebutton.style.visibility = "visible";
-    editbutton = document.getElementById("editbutton");
-    editbutton.style.visibility = "hidden";
-    cancelbutton = document.getElementById("cancelbutton");
-    cancelbutton.style.visibility = "visible";
+    save-button = document.getElementById("save-button");
+    save-button.style.visibility = "visible";
+    edit-button = document.getElementById("edit-button");
+    edit-button.style.visibility = "hidden";
+    cancel-button = document.getElementById("cancel-button");
+    cancel-button.style.visibility = "visible";
 }
 
 // Allows the user to save the information they edited.
@@ -200,12 +200,12 @@ function saveUserInfo() {
         name: userName,
         location: userLocation
     })
-    document.getElementById("personalInfo").disabled = true;
+    document.getElementById("personal-info").disabled = true;
     namefield.style.border = "1px solid white";
     locationfield.style.border = "1px solid white"
-    savebutton.style.visibility = "hidden";
-    editbutton.style.visibility = "visible";
-    cancelbutton.style.visibility = "hidden";
+    save-button.style.visibility = "hidden";
+    edit-button.style.visibility = "visible";
+    cancel-button.style.visibility = "hidden";
 }
 
 // Allows the user to cancel what they edited.
@@ -215,11 +215,11 @@ function cancelUserInfo() {
             currentUser = db.collection("users").doc(user.uid);
             currentUser.get()
                 .then(userDoc => {
-                    user_Name = userDoc.data().name;
+                    userName = userDoc.data().name;
                     user_location = userDoc.data().location;
-                    console.log(user_Name);
-                    if (user_Name != null) {
-                        document.getElementById("name-goes-here").value = user_Name;
+                    console.log(userName);
+                    if (userName != null) {
+                        document.getElementById("name-goes-here").value = userName;
                     }
                     if (user_location != null) {
                         document.getElementById("location").value = user_location;
@@ -229,10 +229,10 @@ function cancelUserInfo() {
             // No user is signed in.
         }
     });
-    document.getElementById("personalInfo").disabled = true;
-    savebutton.style.visibility = "hidden";
-    cancelbutton.style.visibility = "hidden";
-    editbutton.style.visibility = "visible";
+    document.getElementById("personal-info").disabled = true;
+    save-button.style.visibility = "hidden";
+    cancel-button.style.visibility = "hidden";
+    edit-button.style.visibility = "visible";
     namefield.style.border = "1px solid white";
     locationfield.style.border = "1px solid white"
 }

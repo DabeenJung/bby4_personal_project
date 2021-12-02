@@ -4,9 +4,9 @@ function insertName() {
             currentUser = db.collection("users").doc(user.uid);
             currentUser.get()
                 .then(userDoc => {
-                    var user_Name = userDoc.data().name;
-                    console.log(user_Name);
-                    document.getElementById("name-goes-here").innerText = user_Name;
+                    var userName = userDoc.data().name;
+                    console.log(userName);
+                    document.getElementById("name-goes-here").innerText = userName;
                 })
         } else {
             // No user is signed in.

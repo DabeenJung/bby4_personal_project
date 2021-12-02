@@ -32,11 +32,11 @@ body {
   font-size: 30px;
 }
 
-.cardBody .material-icons {
+.card-body .material-icons {
   color: black;
 }
 
-.cardBody .material-icons:hover {
+.card-body .material-icons:hover {
   color: #198754;
 }
 
@@ -48,17 +48,17 @@ body {
   justify-content: space-evenly;
 }
 
-.cardBody {
+.card-body {
   padding: 0 16px 16px;
   width: 390px;
   margin: auto;
 }
 
-.cardBody .card-title {
+.card-body .card-title {
   display: inline;
 }
 
-.cardBody .material-icons {
+.card-body .material-icons {
   float: right;
 }
 
@@ -75,7 +75,7 @@ body {
   margin: auto;
 }
 
-#backbutton {
+#backButton {
   color: black;
 }
 

@@ -9,7 +9,7 @@ function displayAllPlants() {
 
 // Creates the HTML elements required for each plant card.
 function addCards(doc) {
-  let common_name = doc.data().common_name;
+  let commonName = doc.data().common_name;
   let species = doc.data().species;
   let code = doc.data().code.toLowerCase();
   let card = document.createElement("div");
@@ -20,11 +20,11 @@ function addCards(doc) {
   cardCaption.setAttribute("class", "card-body");
   let links = document.createElement("a");
   links.setAttribute("href", "plantinfo.html?code=" + doc.data().code);
-  links.setAttribute("id", common_name);
+  links.setAttribute("id", commonName);
   links.setAttribute("class", "linkstoinfo");
   let cardTitle = document.createElement("h5");
   cardTitle.setAttribute("class", "card-title");
-  cardTitle.innerHTML = "<strong>" + common_name + "</strong>";
+  cardTitle.innerHTML = "<strong>" + commonName + "</strong>";
   let cardText = document.createElement("h7");
   cardText.setAttribute("class", "card-text");
   cardText.innerHTML = "<em>" + species + "</em>";
@@ -37,7 +37,7 @@ function addCards(doc) {
 }
 
 // Adds a click event listener to the search button to call the searchPlant function.
-document.getElementById("searchButton").addEventListener("click", function () {
+document.getElementById("search-button").addEventListener("click", function () {
   searchPlant();
 });
 
@@ -51,7 +51,7 @@ document.addEventListener("keypress", function (e) {
 
 // Reloads the page with default set of plants when called. 
 function resetSearch() {
-  document.getElementById("searchField").value = "";
+  document.getElementById("search-field").value = "";
   clearCards();
   displayAllPlants();
   document.querySelector(".clear-search").style.visibility = "hidden";
@@ -59,7 +59,7 @@ function resetSearch() {
 
 // Gets the plants associated with the search query and adds their plant cards to the page.
 function searchPlant() {
-  let plantQuery = document.getElementById("searchField");
+  let plantQuery = document.getElementById("search-field");
   db.collection("plants").where("common_name", "==", plantQuery.value.toLowerCase()).get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       displaySearchResults(doc);
