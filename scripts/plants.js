@@ -21,7 +21,7 @@ function addCards(doc) {
   let links = document.createElement("a");
   links.setAttribute("href", "plantinfo.html?code=" + doc.data().code);
   links.setAttribute("id", commonName);
-  links.setAttribute("class", "linkstoinfo");
+  links.setAttribute("class", "links-to-info");
   let cardTitle = document.createElement("h5");
   cardTitle.setAttribute("class", "card-title");
   cardTitle.innerHTML = "<strong>" + commonName + "</strong>";
