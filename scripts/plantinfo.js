@@ -57,12 +57,6 @@ function loadPlantData() {
   document.getElementById("humidity-info").innerHTML = humidity;
 }
 
-//toggle fav and unfav button
-//$(".fa").click(function () {
-//  $(this).toggleClass("fa-heart fa-heart-o");
-//  window.localStorage.setItem("fav" , b.className);
-//  console.log("changed color");
-//});
 
 $(document).ready(function () {
   var state = document.getElementById("fav");

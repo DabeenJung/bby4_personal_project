@@ -80,6 +80,7 @@ function checkLoginResult() {
     ui.start('#firebaseui-auth-container', uiConfig);
 }
 
+// Prevents user from accessing the add plant page if they are not logged in 
 function checkLoginAdd() {
     user = firebase.auth().currentUser;
     if (user) {
@@ -92,6 +93,7 @@ function checkLoginAdd() {
     }
 }
 
+// Prevents user from accessing the bookmarks page if they are not logged in 
 function checkLoginBookmark() {
     user = firebase.auth().currentUser;
     if (user) {
@@ -104,6 +106,7 @@ function checkLoginBookmark() {
     }
 }
 
+// Prevents user from accessing their user profile if they are not logged in 
 function promptToLogin() {
     user = firebase.auth().currentUser;
     if (user) {

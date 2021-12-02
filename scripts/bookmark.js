@@ -1,3 +1,4 @@
+// Inserts username of current user
 function insertName() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -19,7 +20,7 @@ var species;
 var code;
 var remove;
 
-// pulls user bookmarks from database and displays the plants in user bookmark collection
+// Pulls user bookmarks from database and displays the plants in user bookmark collection
 function displayBookmark() {
 
     firebase.auth().onAuthStateChanged(user => {
@@ -42,7 +43,7 @@ function displayBookmark() {
                     let links = document.createElement("a");
                     links.setAttribute("href", "plantinfo.html?code=" + code);
                     links.setAttribute("id", species);
-                    links.setAttribute("class", "linkstoinfo");
+                    links.setAttribute("class", "links-to-info");
 
                     let cardTitle = document.createElement("h5");
                     cardTitle.setAttribute("class", "card-title");
@@ -93,38 +94,3 @@ function removeFav(clicked_id) {
     })
 
 }
-
-/*
-    function displayBookmark() {
-        firebase.auth().onAuthStateChanged(user => {
-            if (user) {
-                db.collection("users").doc(user.uid).collection("bookmark").get()
-                    .then(allbookmark => {
-                        allbookmark.forEach(doc => {
-                            var plantName = doc.data().name;
-                            var plantId = doc.data().code;
-                            document.getElementById(plantId).innerText = plantName;
-                        })
-                    })
-            }
-        })
-    }
-    displayBookmark();
-
-
-    function displayBookmarkDate() {
-        firebase.auth().onAuthStateChanged(user => {
-            if (user) {
-                db.collection("users").doc(user.uid).collection("bookmark").get()
-                    .then(allbookmark => {
-                        allbookmark.forEach(doc => {
-                            var dateAdded = doc.data().dateAdded;
-                            var dateAddedID = doc.data().dateAddedID;
-                            document.getElementById(dateAddedID).innerText = dateAdded;
-                        })
-                    })
-            }
-        })
-    }
-    displayBookmarkDate();
-*/

@@ -17,11 +17,11 @@ a {
     margin-top: 10px;
 }
 
-.linkstoinfo {
+.links-to-info {
     text-decoration: none;
 }
 
-.linkstoinfo:hover {
+.links-to-info:hover {
     color: #198754;
 }
 
