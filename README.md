@@ -37,7 +37,7 @@ It has the following subfolders and files:
 ├── scripts                  # Folder for scripts
     /add.js                  # js for add.html
     /bookmark.js             # js for bookmark.html
-	/global.js				 # js for all html 
+    /global.js		     # js for all html 
     /login.js                # js for login.html
     /main.js                 # js for main.html
     /plantinfo.js            # js for plantinfo.html
