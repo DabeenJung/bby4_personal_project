@@ -1,3 +1,7 @@
+var species;
+var code;
+var remove;
+
 // Inserts username of current user
 function insertName() {
     firebase.auth().onAuthStateChanged(user => {
@@ -14,11 +18,7 @@ function insertName() {
         }
     });
 }
-insertName();
 
-var species;
-var code;
-var remove;
 
 // Pulls user bookmarks from database and displays the plants in user bookmark collection
 function displayBookmark() {
@@ -73,9 +73,10 @@ function displayBookmark() {
         }
     })
 }
-displayBookmark();
 
-// removes plant from bookmark page when user clicks heart icon
+
+// removes plant from bookmark page when user clicks heart icon. 
+// @param id of the plant that was unfavourited
 function removeFav(clicked_id) {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -94,3 +95,6 @@ function removeFav(clicked_id) {
     })
 
 }
+
+insertName();
+displayBookmark();

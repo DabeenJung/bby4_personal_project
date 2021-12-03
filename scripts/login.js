@@ -59,8 +59,8 @@ function checkLoginResult() {
     ui.start('#firebaseui-auth-container', uiConfig);
 }
 
-checkLoginResult();
-
 function atLogin() {
     alert("Login to access your profile.");
 }
+
+checkLoginResult();

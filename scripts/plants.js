@@ -8,6 +8,7 @@ function displayAllPlants() {
 }
 
 // Creates the HTML elements required for each plant card.
+//@param document id of the plant to get information from
 function addCards(doc) {
   let commonName = doc.data().common_name;
   let species = doc.data().species;
@@ -70,6 +71,7 @@ function searchPlant() {
 }
 
 // Prepares and adds the plant cards based on the query results.
+// @param document id of the card to add
 function displaySearchResults(doc) {
   clearCards();
   addCards(doc);

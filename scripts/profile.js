@@ -63,6 +63,7 @@ function loadCurrentUser() {
 }
 
 // Gets the plant data under uid from the firebase and display them.
+// @param user document id that contains the plant collection
 function displayPlants(userID) {
     let count = 0;
     db.collection("users").doc(userID).collection("plants").get()

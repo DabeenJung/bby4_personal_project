@@ -43,6 +43,7 @@ function displayUserPlants() {
 }
 
 //Returns name of the user who owns the plant.
+//@param url of the current page
 function getOwner(path) {
     return new Promise((res) => {
         let parse = path.split('/');
