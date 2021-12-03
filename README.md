@@ -19,7 +19,7 @@ Content of the project folder:
 ```
  Top level of project folder:
 ├── .gitignore               # Git ignore file
-├── main.html                # landing HTML file, this is what users see when you come to url
+├── index.html                # landing HTML file, this is what users see when you come to url
 ├── add.html                 # adding plants to profile.html
 ├── bookmark.html            # saving plants to own bookmark
 ├── comment.html             # commenting to others' posts
@@ -33,13 +33,13 @@ It has the following subfolders and files:
 ├── .git                     # Folder for git repo
 ├── images                   # Folder for images
     ├── plants               # about plants database
-    ├── user_photos          # for displaying pictures in main.html
+    ├── user_photos          # for displaying pictures in index.html
 ├── scripts                  # Folder for scripts
     /add.js                  # js for add.html
     /bookmark.js             # js for bookmark.html
     /global.js		         # js for all html 
     /login.js                # js for login.html
-    /main.js                 # js for main.html
+    /index.js                 # js for index.html
     /plantinfo.js            # js for plantinfo.html
     /plants.js               # js for plants.html
     /profile.js              # js for profile.html
@@ -48,7 +48,7 @@ It has the following subfolders and files:
     /bookmark.css            # css for bookmark.html
     /comment.css             # css for comment.html
     /login.css               # css for login.html
-    /main.css                # css for main.html
+    /index.css                # css for index.html
     /plantinfo.css           # css for plantinfo.html
     /plants.css              # css for plants.html
     /profile.css             # css for profile.html
