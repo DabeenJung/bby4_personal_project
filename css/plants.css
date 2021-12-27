@@ -44,8 +44,9 @@ a {
 
 .card-body {
   text-decoration: none;
-  width: 390px;
-  margin: auto;
+  width: 232px;
+  margin: 0;
+  padding-left: 3px;
 }
 
 .card-title {

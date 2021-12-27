@@ -20,3 +20,22 @@ function savePlantInfo() {
         }
     });
 }
+
+function getPlantTypes(doc) {
+    let selectType = document.getElementById("nameInput");
+    let type = doc.data().common_name;
+    let cardOption = document.createElement("option");
+    cardOption.setAttribute("value", type);
+    cardOption.innerHTML = type;
+    selectType.appendChild(cardOption);
+}
+
+function displayAllTypes() {
+    plantDB.get().then(allPlants => {
+        allPlants.forEach(doc => {
+            getPlantTypes(doc);
+        })
+    })
+}
+
+displayAllTypes();

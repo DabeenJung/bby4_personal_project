@@ -13,3 +13,9 @@ a {
 #logo {
     margin-left: 35%;
 }
+
+#nameInput {
+    border-radius: 0.2em;
+    padding: 6px 9px;
+    width: 100%;
+}
