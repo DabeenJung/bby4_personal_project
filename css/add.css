@@ -11,11 +11,21 @@ a {
 }
 
 #title {
-    margin: 20px 35% ;
+    /* margin: 20px 35%; */
+    margin: 20px auto;
+    text-align: center;
+    font-size: 28px;
+    background-color: rgb(228, 250, 215);
+    border-radius: 1em;
+    font-weight: bold;
 }
 
 #nameInput {
     border-radius: 0.2em;
     padding: 6px 9px;
     width: 100%;
+}
+
+.container {
+    padding: 0;
 }
