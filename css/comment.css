@@ -4,9 +4,11 @@
 #backButton {
     color: black;
 }
-#logo {
-    margin-left: 34%;
+
+#back {
+    width: 80px;
 }
+
 .form-floating {
     display: inline-block;
     width: 80%;

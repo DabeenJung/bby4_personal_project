@@ -7,14 +7,18 @@ body {
     color: black;
 }
 
-#logo {
-    margin-right: 45%;
-}
-
 #firebaseui-auth-container {
     margin-top: 20%;
 }
 
 .container-fluid a {
     margin: auto;
+}
+
+#loginandsignup {
+    visibility: hidden;
+}
+
+#back {
+    width: 80px;
 }
