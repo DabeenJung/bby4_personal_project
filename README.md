@@ -5,13 +5,16 @@
 * [Contents](#content)
 
 ## General Info
-Our team, bby4, wants to provide a website with simplified information, and to make a community think about plant ownership more welcoming and easy
+Our team, bby4, wants to provide a website with simplified information, and to make a community think about plant ownership more welcoming and easy.
+I added more features to this group project for more details in design and functions.
+https://bby-04.web.app/
 
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
 * JavaScript
 * Bootstrap
+* Firebase
 
 ## Content
 Content of the project folder:
