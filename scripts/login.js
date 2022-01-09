@@ -15,13 +15,13 @@ function checkLoginResult() {
 
                 if (authResult.additionalUserInfo.isNewUser) {
                     db.collection("users").doc(user.uid).set({
-                            name: user.displayName,
-                            email: user.email,
-                            location: ""
-                        }).then(function () {
-                            console.log("New user aded to firestore");
-                            window.location.assign("index.html");
-                        })
+                        name: user.displayName,
+                        email: user.email,
+                        location: ""
+                    }).then(function () {
+                        console.log("New user aded to firestore");
+                        window.location.assign("index.html");
+                    })
                         .catch(function (error) {
                             console.log("Error adding new user: " + error);
                         });
