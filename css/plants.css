@@ -80,3 +80,8 @@ a {
 .links-to-info:hover {
   color: #198754;
 }
+
+#loginandsignup {
+  padding: 0;
+  margin: auto 0;
+}

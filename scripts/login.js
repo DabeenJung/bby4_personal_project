@@ -64,3 +64,8 @@ function atLogin() {
 }
 
 checkLoginResult();
+
+function changeEmail() {
+    let inputName = document.getElementsByClassName("mdl-textfield__input.firebaseui-input.firebaseui-id-email");
+    inputName.pla
+}

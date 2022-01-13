@@ -118,3 +118,24 @@ function promptToLogin() {
         }
     }
 }
+
+function checkLoginandOut() {
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            document.getElementById("loginandsignup").innerHTML = "Logout";
+        } else {
+            document.getElementById("loginandsignup").innerHTML = "Login/Signup";
+        }
+    })
+}
+checkLoginandOut();
+
+function goToLogin() {
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            firebase.auth().signOut();
+        } else {
+            window.location.href = "login.html";
+        }
+    })
+}

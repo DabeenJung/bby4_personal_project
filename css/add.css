@@ -2,6 +2,11 @@
     margin: auto;
 }
 
+#loginandsignup {
+    padding: 0;
+    margin: auto 0;
+}
+
 #back {
     width: 80px;
 }

@@ -17,6 +17,11 @@ body {
   grid-template-rows: minmax(auto, auto);
 }
 
+#loginandsignup {
+  padding: 0;
+  margin: auto 0;
+}
+
 #plant-image {
   grid-row: 1;
   grid-column: 1/4;
