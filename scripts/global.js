@@ -86,7 +86,7 @@ function checkLoginAdd() {
     if (user) {
         window.location.href = "add.html";
     } else {
-        var txt = confirm("You need to be logged in before you can add plants to your profile. Go to login page?");
+        var txt = confirm("Do you want to go to login page?");
         if (txt == true) {
             location.href = "login.html";
         }
@@ -99,7 +99,7 @@ function checkLoginBookmark() {
     if (user) {
         window.location.href = "bookmark.html";
     } else {
-        var txt = confirm("You need to be logged in before you can favourite plants. Go to login page?");
+        var txt = confirm("Do you want to go to login page?");
         if (txt == true) {
             location.href = "login.html";
         }
@@ -124,7 +124,7 @@ function checkLoginandOut() {
         if (user) {
             document.getElementById("loginandsignup").innerHTML = "Logout";
         } else {
-            document.getElementById("loginandsignup").innerHTML = "Login/Signup";
+            document.getElementById("loginandsignup").innerHTML = "Login";
         }
     })
 }

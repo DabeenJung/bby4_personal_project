@@ -30,14 +30,14 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-light bg-success">
+  <nav class="navbar navbar-light bg-success" id="nav_buttons">
     <div class="container py-3">
       <div id="back">
         <a href="javascript:history.back()"><i class="material-icons" id="backButton">arrow_back_ios_new</i></a>
       </div>
       <a class="navbar-brand" href="index.html" id="logo">True Leaf</a>
       <div id="loginbox">
-        <p class="btn btn-success" onclick="goToLogin()" id="loginandsignup">Login/Signup</p>
+        <p class="btn btn-success" onclick="goToLogin()" id="loginandsignup">Login</p>
       </div>
     </div>
   </nav>
@@ -55,23 +55,25 @@
     <hr />
     <hr />
 
+    <div id="blank"></div>
+
     <div id="care-nav">
       <nav class="navbar navbar-light bg-white">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="plantinfo.html">
-            <i class="material-icons">info</i>
+        <div class="container-fluid" id="care-buttons">
+          <a class="navbar-brand" href=#>
+            <i class="material-icons" id="info">info</i>
             <br />
             Information
           </a>
           <a class="navbar-brand" href="#care-cards">
-            <i class="material-icons">water_drop</i>
+            <i class="material-icons" id="water_drop">water_drop</i>
             <br />
             Care
           </a>
           <a class="navbar-brand">
             <i button type="button" id="fav" class="fa fa-heart-o" onclick="addToFav()"></i>
             <br />
-            Add to Favourites
+            Favourites
           </a>
         </div>
       </nav>
@@ -94,7 +96,7 @@
         <div style="text-align: center" class="card-header">
           <i class="material-icons">water_drop</i>
         </div>
-        <div class="card-body text-primary">
+        <div class="card-body text-success">
           <h5 style="color: black; text-align: center" class="card-title">
             Water
           </h5>
@@ -108,10 +110,10 @@
           <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
             <input type="radio" class="btn-check" name="btnradio_water" id="btnradio_water1" autocomplete="off"
               checked />
-            <label class="btn btn-outline-primary" for="btnradio_water1">Yes</label>
+            <label class="btn btn-outline-success" for="btnradio_water1">Yes</label>
 
             <input type="radio" class="btn-check" name="btnradio_water" id="btnradio_water2" autocomplete="off" />
-            <label class="btn btn-outline-primary" for="btnradio_water2">No</label>
+            <label class="btn btn-outline-success" for="btnradio_water2">No</label>
           </div>
         </div>
       </div>

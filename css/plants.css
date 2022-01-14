@@ -16,8 +16,10 @@ a {
   margin-left: 50px;
 }
 
-#back {
+#backButton {
   width: 80px;
+  margin-left: 50%;
+  margin-top: 11px;
 }
 
 .clear-search:hover {
@@ -40,6 +42,10 @@ a {
   max-width: 45%;
   padding: 10px 0;
   width: 18rem;
+}
+
+.card img {
+  border-radius: 13px;
 }
 
 .card-body {
@@ -83,5 +89,10 @@ a {
 
 #loginandsignup {
   padding: 0;
-  margin: auto 0;
+  margin: auto 0 3px 5px;
+  font-size: 18.5px;
+}
+
+#loginbox {
+  width: 95px;
 }

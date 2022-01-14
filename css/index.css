@@ -2,18 +2,28 @@ body {
   padding-bottom: 60px;
 }
 
-#back {
+#backButton {
   width: 80px;
+  margin-left: 50%;
+  margin-top: 11px;
+  color: black;
 }
 
 #loginandsignup {
   padding: 0;
-  margin: auto 0;
+  margin: auto 0 3px 5px;
+  font-size: 18.5px;
+}
+
+#loginbox {
+  width: 95px;
 }
 
 #plant-cards {
   display: grid;
   justify-items: center;
+  width: 100%;
+  margin: 0;
 }
 
 .cards {
@@ -23,12 +33,15 @@ body {
 .card {
   width: 390px;
   margin-top: 17px;
+  border-radius: 13px;
 }
 
 .card-header {
   display: grid;
   background-color: white;
   grid-template-columns: 12% 88%;
+  border-bottom: none;
+  margin: 3px 0;
 }
 
 .card-header .material-icons {
@@ -55,7 +68,7 @@ body {
 
 .card-body {
   padding: 0 16px 16px;
-  width: 390px;
+  width: 370px;
   margin: auto;
 }
 
@@ -76,14 +89,11 @@ body {
   margin: auto;
 }
 
-#backButton {
-  color: black;
-}
-
 .card-image {
   width: 350px;
   display: block;
   margin: 0 auto 10px;
+  border-radius: 13px;
 }
 
 .username {

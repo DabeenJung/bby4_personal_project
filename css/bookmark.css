@@ -2,9 +2,20 @@
     width: 80px;
 }
 
+#backButton {
+    width: 80px;
+    margin-left: 50%;
+    margin-top: 11px;
+}
+
 #loginandsignup {
     padding: 0;
-    margin: auto 0;
+    margin: auto 0 3px 5px;
+    font-size: 18.5px;
+}
+  
+#loginbox {
+    width: 95px;
 }
 
 a {
@@ -32,6 +43,7 @@ a {
 .box img {
     width: 100px;
     margin: auto;
+    border-radius: 15px;
 }
 
 .card-title {

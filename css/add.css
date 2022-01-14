@@ -4,11 +4,29 @@
 
 #loginandsignup {
     padding: 0;
-    margin: auto 0;
+    margin: auto 0 3px 5px;
+    font-size: 18.5px;
+}
+  
+#loginbox {
+    width: 95px;
 }
 
 #back {
     width: 80px;
+}
+
+#backButton {
+    margin-left: 50%;
+    margin-top: 11px;
+}
+
+#personalInfoFields {
+    padding: 20px;
+}
+
+.container.py-3 {
+    padding: 16px 12px;
 }
 
 a {
@@ -17,7 +35,7 @@ a {
 
 #title {
     /* margin: 20px 35%; */
-    margin: 20px auto;
+    margin: 20px;
     text-align: center;
     font-size: 28px;
     background-color: rgb(228, 250, 215);
@@ -33,4 +51,8 @@ a {
 
 .container {
     padding: 0;
+}
+
+#saveButton {
+    margin-right: 20px;
 }

@@ -2,9 +2,15 @@ body {
   padding-bottom: 60px;
 }
 
+#logo {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #backButton {
   color: black;
   margin-left: 50%;
+  margin-top: 11px;
 }
 
 #back {
@@ -17,16 +23,21 @@ body {
   grid-template-rows: minmax(auto, auto);
 }
 
+#loginbox {
+  width: 95px;
+}
+
 #loginandsignup {
   padding: 0;
-  margin: auto 0;
+  margin: auto 0 3px 5px;
+  font-size: 18.5px;
 }
 
 #plant-image {
   grid-row: 1;
   grid-column: 1/4;
   text-align: center;
-  margin-top: 8rem;
+  margin-top: 5rem;
 }
 
 #plant-name {
@@ -48,16 +59,22 @@ body {
   height: auto;
 }
 
-#care-nav {
+#blank {
+  height: 30px;
+  grid-column: 1 / 4;
   grid-row: 4;
+}
+
+#care-nav {
+  grid-row: 5;
   grid-column: 1/4;
   text-align: center;
 }
 
 #description {
-  grid-row: 5;
+  grid-row: 6;
   grid-column: 1/4;
-  margin: 1rem;
+  margin: 1rem 17px 1rem 30px;
 }
 
 #care-cards {
@@ -78,9 +95,22 @@ body {
 }
 
 #picture {
-  height: 500px;
+  display: inherit;
+  height: 440px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
 }
 
 #plant-name {
   font-weight: bold;
+}
+
+#info {
+  grid-column: 1 / span 1;
+}
+
+#care-buttons {
+  display: grid;
+  grid-template-columns: 33.3% 33.3% 33.3%;
 }
