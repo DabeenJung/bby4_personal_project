@@ -1,40 +1,40 @@
 var currentUser, userName, user_location;
 
-// Gets the user for the profile to retrieve.
-async function getUserProfile() {
-    let params = new URL(window.location.href);
-    let stringParams = params.searchParams.toString();
-    console.log(stringParams);
-    if (stringParams.includes("user")) {
-        return params.searchParams.get("user");
-    } else {
-        console.log("no user found");
-        return null;
-    }
-}
+// // Gets the user for the profile to retrieve.
+// async function getUserProfile() {
+//     let params = new URL(window.location.href);
+//     let stringParams = params.searchParams.toString();
+//     console.log(stringParams);
+//     if (stringParams.includes("user")) {
+//         return params.searchParams.get("user");
+//     } else {
+//         console.log("no user found");
+//         return null;
+//     }
+// }
 
-// Gets the user's profile data. Uses the URL param if available, else uses the currently logged in user. Placeholder "404" profile to come.
-getUserProfile().then(userID => {
-    if (!userID) {
-        loadCurrentUser();
-    } else {
-        displayPlants(userID);
-        document.getElementById("editButton").style.visibility = "hidden";
-        currentUser = db.collection("users").doc(userID);
-        currentUser.get()
-            .then(userDoc => {
-                userName = userDoc.data().name;
-                user_location = userDoc.data().location;
-                console.log(userName);
-                if (userName != null) {
-                    document.getElementById("name-goes-here").value = userName;
-                }
-                if (user_location != null) {
-                    document.getElementById("location").value = user_location;
-                }
-            })
-    }
-});
+// // Gets the user's profile data. Uses the URL param if available, else uses the currently logged in user. Placeholder "404" profile to come.
+// getUserProfile().then(userID => {
+//     if (!userID) {
+//         loadCurrentUser();
+//     } else {
+//         displayPlants(userID);
+//         document.getElementById("editButton").style.visibility = "hidden";
+//         currentUser = db.collection("users").doc(userID);
+//         currentUser.get()
+//             .then(userDoc => {
+//                 userName = userDoc.data().name;
+//                 user_location = userDoc.data().location;
+//                 console.log(userName);
+//                 if (userName != null) {
+//                     document.getElementById("name-goes-here").value = userName;
+//                 }
+//                 if (user_location != null) {
+//                     document.getElementById("location").value = user_location;
+//                 }
+//             })
+//     }
+// });
 
 // Gets user's name and location from the firebase and displays them.
 function loadCurrentUser() {
@@ -61,6 +61,8 @@ function loadCurrentUser() {
         }
     });
 }
+
+loadCurrentUser();
 
 // Gets the plant data under uid from the firebase and display them.
 // @param user document id that contains the plant collection
